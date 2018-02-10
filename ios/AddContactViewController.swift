@@ -18,8 +18,10 @@ class AddContactViewController: UIViewController {
         contact.givenName = "John"
         contact.familyName = "Appleseed"
         
-        let homeEmail = CNLabeledValue(label:CNLabelHome, value:"john@example.com")
-        let workEmail = CNLabeledValue(label:CNLabelWork, value:"j.appleseed@icloud.com")
+        let homie = "john@example.com"
+        let workie = "j.appleseed@icloud.com"
+        let homeEmail = CNLabeledValue(label:CNLabelHome, value: homie as NSString)
+        let workEmail = CNLabeledValue(label:CNLabelWork, value:workie as NSString)
         contact.emailAddresses = [homeEmail, workEmail]
         
         let homeAddress = CNMutablePostalAddress()
@@ -31,8 +33,8 @@ class AddContactViewController: UIViewController {
  
         let store = CNContactStore()
         let saveRequest = CNSaveRequest()
-        saveRequest.addContact(contact, toContainerWithIdentifier:nil)
-        try! store.executeSaveRequest(saveRequest)
+        saveRequest.add(contact, toContainerWithIdentifier:nil)
+        try! store.execute(saveRequest)
         
     }
     */
