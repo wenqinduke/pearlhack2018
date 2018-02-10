@@ -71,6 +71,64 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func requesting(img: UIImage) {
+        let key =  " bea5456245a14ae6b0486d13adda1e71"
+        
+        var request = URLRequest(url: NSURL(string: "https://westcentralus.api.cognitive.microsoft.com/vision/v1.0/ocr?language=unk&detectOrientation=true")! as URL)
+        
+        request.httpMethod = "POST"
+        request.addValue(key, forHTTPHeaderField: "Ocp-Apim-Subscription-Key")
+        
+        
+        
+        /*
+         
+         // this is send a image from url
+         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+         let body = ["url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Broadway_and_Times_Square_by_night.jpg/450px-Broadway_and_Times_Square_by_night.jpg"]
+         do{
+         request.httpBody = try JSONSerialization.data(withJSONObject: body)
+         } catch{
+         print("error in try")
+         }
+         */
+        
+        // send a local image
+        request.addValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
+        
+        //testing local image
+        //let image = UIImage(named: "card.jpg")!
+        //let imageData  = UIImageJPEGRepresentation(image, 1.0)!
+        
+        let imageData  = UIImageJPEGRepresentation(img, 1.0)!
+
+        request.httpBody = imageData
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print("did not get data")
+                return
+            }
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String:Any]
+                
+                
+                // here you can parse all json file
+                // print out language filed as an example
+                
+                let lan = json["language"] as? String
+                print(lan)
+            } catch let error as NSError {
+                print(error)
+            }
+            
+            }.resume()
+        
+        
+    }
+    
+    
 
     /*
     // MARK: - Navigation
