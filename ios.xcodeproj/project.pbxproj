@@ -14,6 +14,7 @@
 		133AF524202E767C00F5E7A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 133AF523202E767C00F5E7A2 /* Assets.xcassets */; };
 		133AF527202E767C00F5E7A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 133AF525202E767C00F5E7A2 /* LaunchScreen.storyboard */; };
 		133AF531202E7D0400F5E7A2 /* ImportImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133AF530202E7D0400F5E7A2 /* ImportImageViewController.swift */; };
+		785E3C8A202F6A0F006F4864 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E3C89202F6A0F006F4864 /* AddContactViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		133AF526202E767C00F5E7A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		133AF528202E767C00F5E7A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		133AF530202E7D0400F5E7A2 /* ImportImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImportImageViewController.swift; path = ../ImportImageViewController.swift; sourceTree = "<group>"; };
+		785E3C89202F6A0F006F4864 /* AddContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				133AF51C202E767C00F5E7A2 /* FirstViewController.swift */,
 				133AF51E202E767C00F5E7A2 /* SecondViewController.swift */,
 				133AF520202E767C00F5E7A2 /* Main.storyboard */,
+				785E3C89202F6A0F006F4864 /* AddContactViewController.swift */,
 				133AF523202E767C00F5E7A2 /* Assets.xcassets */,
 				133AF525202E767C00F5E7A2 /* LaunchScreen.storyboard */,
 				133AF528202E767C00F5E7A2 /* Info.plist */,
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				785E3C8A202F6A0F006F4864 /* AddContactViewController.swift in Sources */,
 				133AF51F202E767C00F5E7A2 /* SecondViewController.swift in Sources */,
 				133AF51B202E767C00F5E7A2 /* AppDelegate.swift in Sources */,
 				133AF51D202E767C00F5E7A2 /* FirstViewController.swift in Sources */,
@@ -273,6 +277,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 96XYD547ZF;
 				INFOPLIST_FILE = ios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "yiqin-zhou.ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -286,6 +291,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 96XYD547ZF;
 				INFOPLIST_FILE = ios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "yiqin-zhou.ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
