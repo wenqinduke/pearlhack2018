@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9pv-A4-QxB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9pv-A4-QxB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,17 +23,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contactor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnK-Ph-kac">
-                                <rect key="frame" x="9" y="110" width="359" height="63"/>
+                                <rect key="frame" x="9" y="110" width="359" height="83"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="47"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coverpic" translatesAutoresizingMaskIntoConstraints="NO" id="9JZ-oM-o6W">
-                                <rect key="frame" x="53" y="200" width="271" height="303"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="303" id="WAL-LF-c2x"/>
-                                </constraints>
-                            </imageView>
                             <button contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qU-i6-agg">
                                 <rect key="frame" x="160" y="560" width="56" height="53"/>
                                 <state key="normal" title="Choose namecard" image="camera"/>
@@ -41,22 +35,28 @@
                                     <segue destination="Hjl-sy-N9R" kind="show" id="bxq-1Y-84V"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="coverpic" translatesAutoresizingMaskIntoConstraints="NO" id="9JZ-oM-o6W">
+                                <rect key="frame" x="53" y="183" width="271" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="WAL-LF-c2x"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9JZ-oM-o6W" firstAttribute="top" secondItem="lnK-Ph-kac" secondAttribute="bottom" constant="27" id="AnS-eA-Dgq"/>
                             <constraint firstItem="lnK-Ph-kac" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="B4q-a9-XCR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lnK-Ph-kac" secondAttribute="trailing" constant="-9" id="B68-8N-FmF"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="2qU-i6-agg" secondAttribute="bottom" constant="71" id="RJ9-Gw-2QF"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="2qU-i6-agg" secondAttribute="bottom" constant="60" id="RJ9-Gw-2QF"/>
                             <constraint firstItem="9JZ-oM-o6W" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="37" id="Sa5-wg-Ear"/>
                             <constraint firstItem="lnK-Ph-kac" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="90" id="cvX-5x-TIZ"/>
                             <constraint firstItem="9JZ-oM-o6W" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="eta-uI-Whn"/>
                             <constraint firstItem="lnK-Ph-kac" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-7" id="gRZ-EE-Qn0"/>
-                            <constraint firstItem="2qU-i6-agg" firstAttribute="top" secondItem="9JZ-oM-o6W" secondAttribute="bottom" constant="67" id="iV8-jV-cvk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="2qU-i6-agg" secondAttribute="trailing" constant="140" id="p5h-sd-CbF"/>
+                            <constraint firstItem="2qU-i6-agg" firstAttribute="top" secondItem="9JZ-oM-o6W" secondAttribute="bottom" constant="77" id="iV8-jV-cvk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2qU-i6-agg" secondAttribute="trailing" constant="145" id="p5h-sd-CbF"/>
                             <constraint firstItem="lnK-Ph-kac" firstAttribute="centerX" secondItem="9JZ-oM-o6W" secondAttribute="centerX" id="q41-6p-Yb4"/>
-                            <constraint firstItem="2qU-i6-agg" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="140" id="rI9-rP-Wdp"/>
-                            <constraint firstItem="9JZ-oM-o6W" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="180" id="w3f-CK-TJh"/>
+                            <constraint firstItem="2qU-i6-agg" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="145" id="rI9-rP-Wdp"/>
+                            <constraint firstItem="9JZ-oM-o6W" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="200" id="w3f-CK-TJh"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
@@ -94,25 +94,20 @@
                                     <action selector="SelectImage:" destination="Hjl-sy-N9R" eventType="touchUpInside" id="bpw-aX-Qpu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xyl-Qw-ywx">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xyl-Qw-ywx">
                                 <rect key="frame" x="159" y="619" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="SendMessage:" destination="Hjl-sy-N9R" eventType="touchUpInside" id="i9f-EF-wKg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNB-Bc-hDd">
-                                <rect key="frame" x="272" y="8" width="103" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Confirm"/>
-                                <connections>
-                                    <action selector="detectInfo:" destination="Hjl-sy-N9R" eventType="touchUpInside" id="02Z-vh-GOs"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMc-L3-1cG">
-                                <rect key="frame" x="0.0" y="-13" width="95" height="73"/>
+                                <rect key="frame" x="16" y="28" width="95" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                <state key="normal" title="&lt; Back">
+                                    <color key="titleColor" red="0.98080004759999995" green="0.98791411439999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="9pv-A4-QxB" kind="presentation" id="rg7-MV-fTc"/>
                                 </connections>
@@ -132,6 +127,17 @@
                                 </variation>
                                 <connections>
                                     <action selector="ScanImage:" destination="Hjl-sy-N9R" eventType="touchUpInside" id="2g0-Sf-Mek"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNB-Bc-hDd">
+                                <rect key="frame" x="287" y="49" width="103" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                <state key="normal" title="Done &gt; ">
+                                    <color key="titleColor" red="0.98080004759999995" green="0.98791411439999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="detectInfo:" destination="Hjl-sy-N9R" eventType="touchUpInside" id="02Z-vh-GOs"/>
                                 </connections>
                             </button>
                         </subviews>
