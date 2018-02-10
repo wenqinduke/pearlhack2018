@@ -147,6 +147,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Confirm"/>
                                 <connections>
+                                    <action selector="detectInfo:" destination="Hjl-sy-N9R" eventType="touchUpInside" id="tRT-jC-sm5"/>
                                     <segue destination="TMz-Eg-vTT" kind="presentation" id="aKz-k5-pmc"/>
                                 </connections>
                             </button>

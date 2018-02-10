@@ -11,9 +11,11 @@ import UIKit
 class ImportImageViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     var image: UIImagePickerController!
+    var nameCard: UIImage!
+    
 
     @IBAction func SelectImage(_ sender: Any) {
-        
+        print("test for button")
         image = UIImagePickerController()
         image.delegate=self
         image.sourceType = UIImagePickerControllerSourceType.photoLibrary
@@ -46,6 +48,7 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image=info[UIImagePickerControllerOriginalImage] as? UIImage{
            NamecardImage.image=image
+           nameCard=image
         }
         else{
             //error message
@@ -69,6 +72,16 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    
+    @IBAction func detectInfo(_ sender: Any) {
+        print ("testing")
+        requesting(img: nameCard)
+        
+        
+        
     }
     
     
@@ -98,7 +111,7 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
         request.addValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
         
         //testing local image
-        //let image = UIImage(named: "card.jpg")!
+        //let image = UIImage(named: "card.jpeg")!
         //let imageData  = UIImageJPEGRepresentation(image, 1.0)!
         
         let imageData  = UIImageJPEGRepresentation(img, 1.0)!
