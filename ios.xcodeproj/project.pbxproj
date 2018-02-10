@@ -14,6 +14,9 @@
 		133AF524202E767C00F5E7A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 133AF523202E767C00F5E7A2 /* Assets.xcassets */; };
 		133AF527202E767C00F5E7A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 133AF525202E767C00F5E7A2 /* LaunchScreen.storyboard */; };
 		133AF531202E7D0400F5E7A2 /* ImportImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133AF530202E7D0400F5E7A2 /* ImportImageViewController.swift */; };
+		1368FAB4202F7A94005D8408 /* back1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1368FAB3202F7A94005D8408 /* back1.jpeg */; };
+		1368FAB6202F7C29005D8408 /* back.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1368FAB5202F7C29005D8408 /* back.jpeg */; };
+		1368FAB8202F7C9F005D8408 /* back3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1368FAB7202F7C9F005D8408 /* back3.jpeg */; };
 		785E3C8A202F6A0F006F4864 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E3C89202F6A0F006F4864 /* AddContactViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +30,9 @@
 		133AF526202E767C00F5E7A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		133AF528202E767C00F5E7A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		133AF530202E7D0400F5E7A2 /* ImportImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImportImageViewController.swift; path = ../ImportImageViewController.swift; sourceTree = "<group>"; };
+		1368FAB3202F7A94005D8408 /* back1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = back1.jpeg; sourceTree = "<group>"; };
+		1368FAB5202F7C29005D8408 /* back.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = back.jpeg; sourceTree = "<group>"; };
+		1368FAB7202F7C9F005D8408 /* back3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = back3.jpeg; sourceTree = "<group>"; };
 		785E3C89202F6A0F006F4864 /* AddContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,10 +67,13 @@
 			isa = PBXGroup;
 			children = (
 				133AF530202E7D0400F5E7A2 /* ImportImageViewController.swift */,
+				1368FAB3202F7A94005D8408 /* back1.jpeg */,
+				1368FAB7202F7C9F005D8408 /* back3.jpeg */,
 				133AF51A202E767C00F5E7A2 /* AppDelegate.swift */,
 				133AF51C202E767C00F5E7A2 /* FirstViewController.swift */,
 				133AF51E202E767C00F5E7A2 /* SecondViewController.swift */,
 				133AF520202E767C00F5E7A2 /* Main.storyboard */,
+				1368FAB5202F7C29005D8408 /* back.jpeg */,
 				785E3C89202F6A0F006F4864 /* AddContactViewController.swift */,
 				133AF523202E767C00F5E7A2 /* Assets.xcassets */,
 				133AF525202E767C00F5E7A2 /* LaunchScreen.storyboard */,
@@ -133,8 +142,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1368FAB8202F7C9F005D8408 /* back3.jpeg in Resources */,
+				1368FAB4202F7A94005D8408 /* back1.jpeg in Resources */,
 				133AF527202E767C00F5E7A2 /* LaunchScreen.storyboard in Resources */,
 				133AF524202E767C00F5E7A2 /* Assets.xcassets in Resources */,
+				1368FAB6202F7C29005D8408 /* back.jpeg in Resources */,
 				133AF522202E767C00F5E7A2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
