@@ -89,11 +89,7 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
     
     
     @IBAction func detectInfo(_ sender: Any) {
-        print ("testing")
         requesting(img: nameCard)
-        
-        
-        
     }
     
     
@@ -142,7 +138,7 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
                 // here you can parse all json file
                 // print out language filed as an example
                 
-                let lan = json["text"] as? String
+                let lan = json["language"] as? String
                 print ("++++++++++++++++++")
                 print(lan!)
                 self.passInfo = lan!
