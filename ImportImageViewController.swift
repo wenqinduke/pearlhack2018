@@ -52,7 +52,7 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image=info[UIImagePickerControllerOriginalImage] as? UIImage{
            NamecardImage.image=image
-           NamecardImage.contentMode = UIViewContentMode.scaleAspectFill
+           NamecardImage.contentMode = UIViewContentMode.scaleAspectFit
            nameCard=image
         }
         else{
@@ -142,7 +142,7 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
                 // here you can parse all json file
                 // print out language filed as an example
                 
-                let lan = json["language"] as? String
+                let lan = json["text"] as? String
                 print ("++++++++++++++++++")
                 print(lan!)
                 self.passInfo = lan!
@@ -170,7 +170,8 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
         case "confirmContact" as NSString:
             
             let secondController=segue.destination as! AddContactViewController
-            secondController.myString=self.passInfo
+            if (!self.passInfo.isEmpty){
+                secondController.myString=self.passInfo}
         //secondController.myString="hhh"
         default:
             print ("" as NSString)
