@@ -49,6 +49,44 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
         
     }
     
+    func SendMessage(textContent: String, toPerson: String) {
+        
+        print ("send message called ")
+        
+        var request = URLRequest(url: NSURL(string: "https://api.catapult.inetwork.com/v1/users/u-2j6eew23n4z4s7wrdzyj5ey/messages")! as URL)
+        request.httpMethod = "POST"
+        
+        let loginData = String(format: "%@:%@", "t-5m2durjfxxj4vh5kbpetega", "ewy4epz24p26ridgegp56yhwfkkgodry2jmgofq").data(using: String.Encoding.utf8)!
+        let base64LoginData = loginData.base64EncodedString()
+        request.setValue("Basic \(base64LoginData)", forHTTPHeaderField: "Authorization")
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        
+        
+        let body = ["to" : "+19198138625",  // change here
+                    "from" : "+19842198388",
+                    "text" : "Yiqin Zhou" // change to textContent here
+        ]
+        do{
+            request.httpBody = try JSONSerialization.data(withJSONObject: body)
+        } catch {
+            print( "try throw an error")
+        }
+        
+        URLSession.shared.dataTask(with: request){ data, response, error in
+            guard let data = data, error == nil else {
+                print ("did not get data")
+                return
+            }
+            
+            }.resume()
+        
+        print ("message finish")
+        
+        
+    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image=info[UIImagePickerControllerOriginalImage] as? UIImage{
            NamecardImage.image=image
