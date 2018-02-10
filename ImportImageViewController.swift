@@ -123,11 +123,11 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
         request.addValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
         
         //testing local image
-        //let image = UIImage(named: "card.jpeg")!
-        //let imageData  = UIImageJPEGRepresentation(image, 1.0)!
+        let image = UIImage(named: "card.jpeg")!
+        let imageData  = UIImageJPEGRepresentation(image, 1.0)!
         
-        let imageData  = UIImageJPEGRepresentation(img, 1.0)!
-
+        //let imageData  = UIImageJPEGRepresentation(img, 1.0)!
+        
         request.httpBody = imageData
         
         URLSession.shared.dataTask(with: request) { data, response, error in
@@ -143,8 +143,12 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
                 // print out language filed as an example
                 
                 let lan = json["language"] as? String
-                self.passInfo=lan
-                print(lan)
+                print ("++++++++++++++++++")
+                print(lan!)
+                self.passInfo = lan!
+                
+                self.performSegue(withIdentifier: "confirmContact", sender: self)
+                
                 
             } catch let error as NSError {
                 print(error)
@@ -155,13 +159,26 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
         
     }
     
+    /*
     @IBAction func confirm(_ sender: Any) {
         performSegue(withIdentifier: "confirmContact", sender: self)
     }
+     */
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var secondController=segue.destination as! AddContactViewController
-        secondController.myString=self.passInfo
+        switch segue.identifier {
+        case "confirmContact" as NSString:
+            
+            let secondController=segue.destination as! AddContactViewController
+            secondController.myString=self.passInfo
+        //secondController.myString="hhh"
+        default:
+            print ("" as NSString)
+            
+            
+        }
+        
+
     }
     
 
