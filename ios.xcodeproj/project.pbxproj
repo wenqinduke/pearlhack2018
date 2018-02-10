@@ -20,6 +20,7 @@
 		1368FABA202F7ED2005D8408 /* card.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1368FAB9202F7ED2005D8408 /* card.jpeg */; };
 		785E3C8A202F6A0F006F4864 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E3C89202F6A0F006F4864 /* AddContactViewController.swift */; };
 		785E3C8C202F827B006F4864 /* UIextension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E3C8B202F827B006F4864 /* UIextension.swift */; };
+		785E3C8E202F9CC7006F4864 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E3C8D202F9CC7006F4864 /* RoundButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		1368FAB9202F7ED2005D8408 /* card.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card.jpeg; sourceTree = "<group>"; };
 		785E3C89202F6A0F006F4864 /* AddContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
 		785E3C8B202F827B006F4864 /* UIextension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIextension.swift; sourceTree = "<group>"; };
+		785E3C8D202F9CC7006F4864 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				133AF523202E767C00F5E7A2 /* Assets.xcassets */,
 				133AF525202E767C00F5E7A2 /* LaunchScreen.storyboard */,
 				133AF528202E767C00F5E7A2 /* Info.plist */,
+				785E3C8D202F9CC7006F4864 /* RoundButton.swift */,
 			);
 			path = ios;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			files = (
 				785E3C8A202F6A0F006F4864 /* AddContactViewController.swift in Sources */,
 				133AF51F202E767C00F5E7A2 /* SecondViewController.swift in Sources */,
+				785E3C8E202F9CC7006F4864 /* RoundButton.swift in Sources */,
 				133AF51B202E767C00F5E7A2 /* AppDelegate.swift in Sources */,
 				785E3C8C202F827B006F4864 /* UIextension.swift in Sources */,
 				133AF51D202E767C00F5E7A2 /* FirstViewController.swift in Sources */,

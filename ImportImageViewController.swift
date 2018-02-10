@@ -14,7 +14,10 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
     var nameCard: UIImage!
     var passInfo: String!
     
+    @IBOutlet weak var scanCamera: UIButton!
 
+    @IBOutlet weak var photoLibrary: UIButton!
+    
     @IBAction func SelectImage(_ sender: Any) {
         print("test for button")
         image = UIImagePickerController()
@@ -66,10 +69,17 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        scanCamera.backgroundColor = .clear
+        scanCamera.layer.cornerRadius = 20
+        scanCamera.layer.borderWidth = 5
+        scanCamera.layer.borderColor = UIColor.white.cgColor
+        photoLibrary.backgroundColor = .clear
+        photoLibrary.layer.cornerRadius = 20
+        photoLibrary.layer.borderWidth = 5
+        photoLibrary.layer.borderColor = UIColor.white.cgColor
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9pv-A4-QxB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9pv-A4-QxB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="TimesNewRoman.ttf">
-            <string>TimesNewRomanPSMT</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--First-->
         <scene sceneID="hNz-n2-bh7">
@@ -85,34 +80,18 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Nu-5p-sUF">
                                 <rect key="frame" x="0.0" y="64" width="375" height="411"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBC-xz-lJH">
-                                <rect key="frame" x="0.0" y="505" width="375" height="43"/>
-                                <color key="backgroundColor" red="0.89736479920000001" green="0.24864651260000001" blue="0.079933921199999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBC-xz-lJH">
+                                <rect key="frame" x="45" y="505" width="290" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="Nec-aV-kME"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
+                                <color key="tintColor" red="0.64290609720000003" green="0.75115128389999997" blue="0.9583670661" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Choose from Photo Library">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.98080004762792317" green="0.98791411444703747" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="SelectImage:" destination="Hjl-sy-N9R" eventType="touchUpInside" id="bpw-aX-Qpu"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwd-PU-xlf">
-                                <rect key="frame" x="0.0" y="570" width="375" height="41"/>
-                                <color key="backgroundColor" red="0.89736479922279788" green="0.24864651260056087" blue="0.079933921198887939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="41" id="mZ7-27-bNw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="16"/>
-                                <state key="normal" title="Scan the namecard now">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
-                                </variation>
-                                <connections>
-                                    <action selector="ScanImage:" destination="Hjl-sy-N9R" eventType="touchUpInside" id="2g0-Sf-Mek"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xyl-Qw-ywx">
@@ -139,14 +118,33 @@
                                     <segue destination="9pv-A4-QxB" kind="presentation" id="rg7-MV-fTc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwd-PU-xlf">
+                                <rect key="frame" x="50" y="556" width="275" height="41"/>
+                                <color key="backgroundColor" red="0.64290609715612512" green="0.75115128390117403" blue="0.95836706606217614" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="mZ7-27-bNw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
+                                <state key="normal" title="Open Camera to Scan now!">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
+                                </variation>
+                                <connections>
+                                    <action selector="ScanImage:" destination="Hjl-sy-N9R" eventType="touchUpInside" id="2g0-Sf-Mek"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.64290609720000003" green="0.75115128389999997" blue="0.9583670661" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="rBC-xz-lJH" firstAttribute="top" secondItem="4Nu-5p-sUF" secondAttribute="bottom" constant="30" id="7oe-ea-LJx"/>
-                            <constraint firstAttribute="trailing" secondItem="rBC-xz-lJH" secondAttribute="trailing" id="OTF-in-XfU"/>
+                            <constraint firstItem="rBC-xz-lJH" firstAttribute="top" secondItem="4Nu-5p-sUF" secondAttribute="bottom" constant="5" id="7oe-ea-LJx"/>
+                            <constraint firstAttribute="trailing" secondItem="rBC-xz-lJH" secondAttribute="trailing" constant="50" id="OTF-in-XfU"/>
+                            <constraint firstItem="rBC-xz-lJH" firstAttribute="leading" secondItem="bhE-Py-AO6" secondAttribute="leadingMargin" constant="29" id="OxZ-iq-osO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rBC-xz-lJH" secondAttribute="trailing" constant="24" id="Sz6-MQ-hOV"/>
                             <constraint firstItem="wwd-PU-xlf" firstAttribute="trailing" secondItem="rBC-xz-lJH" secondAttribute="trailing" id="Xc1-6o-JCh"/>
                             <constraint firstItem="wwd-PU-xlf" firstAttribute="top" secondItem="rBC-xz-lJH" secondAttribute="bottom" constant="22" id="dnF-Ia-z3b"/>
-                            <constraint firstItem="rBC-xz-lJH" firstAttribute="leading" secondItem="bhE-Py-AO6" secondAttribute="leading" id="el1-Qj-xxG"/>
+                            <constraint firstItem="rBC-xz-lJH" firstAttribute="leading" secondItem="bhE-Py-AO6" secondAttribute="leading" constant="50" id="el1-Qj-xxG"/>
                             <constraint firstAttribute="bottom" secondItem="rBC-xz-lJH" secondAttribute="bottom" constant="119" id="jom-GM-zay"/>
                             <constraint firstItem="rBC-xz-lJH" firstAttribute="leading" secondItem="4Nu-5p-sUF" secondAttribute="leading" id="lSN-bO-ebo"/>
                             <constraint firstItem="Xyl-Qw-ywx" firstAttribute="top" secondItem="wwd-PU-xlf" secondAttribute="bottom" constant="8" symbolic="YES" id="p34-uc-cv3"/>
@@ -158,6 +156,8 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="NamecardImage" destination="4Nu-5p-sUF" id="2hs-2N-Ce9"/>
+                        <outlet property="photoLibrary" destination="rBC-xz-lJH" id="Nf1-4o-U8e"/>
+                        <outlet property="scanCamera" destination="wwd-PU-xlf" id="x30-Ma-XMZ"/>
                         <segue destination="TMz-Eg-vTT" kind="presentation" identifier="confirmContact" id="Axb-mX-tLz"/>
                     </connections>
                 </viewController>
@@ -214,11 +214,10 @@
     </scenes>
     <resources>
         <image name="camera" width="400" height="400"/>
-        <image name="coverpic" width="345" height="344"/>
+        <image name="coverpic" width="512" height="512"/>
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Axb-mX-tLz"/>
-        <segue reference="HGx-BP-kCw"/>
+        <segue reference="bxq-1Y-84V"/>
     </inferredMetricsTieBreakers>
 </document>
