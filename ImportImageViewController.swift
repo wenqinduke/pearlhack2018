@@ -159,8 +159,19 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var secondController=segue.destination as! AddContactViewController
-        secondController.myString=self.passInfo
+        switch segue.identifier {
+        case "confirmContact" as NSString:
+            
+            let secondController=segue.destination as! AddContactViewController
+            secondController.myString=self.passInfo
+        //secondController.myString="hhh"
+        default:
+            print ("" as NSString)
+            
+            
+        }
+        
+
     }
     
 
