@@ -15,7 +15,7 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
     
 
     @IBAction func SelectImage(_ sender: Any) {
-        
+        print("test for button")
         image = UIImagePickerController()
         image.delegate=self
         image.sourceType = UIImagePickerControllerSourceType.photoLibrary
@@ -77,7 +77,7 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
     
     
     @IBAction func detectInfo(_ sender: Any) {
-        
+        print ("testing")
         requesting(img: nameCard)
         
         

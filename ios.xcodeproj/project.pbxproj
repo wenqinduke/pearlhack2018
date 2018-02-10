@@ -117,7 +117,7 @@
 				TargetAttributes = {
 					133AF516202E767C00F5E7A2 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 96XYD547ZF;
+						DevelopmentTeam = 4N3PG9VU72;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -291,11 +291,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 96XYD547ZF;
+				DEVELOPMENT_TEAM = 4N3PG9VU72;
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "yiqin-zhou.ios";
+				PRODUCT_BUNDLE_IDENTIFIER = yumin.zhang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -305,11 +305,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 96XYD547ZF;
+				DEVELOPMENT_TEAM = 4N3PG9VU72;
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "yiqin-zhou.ios";
+				PRODUCT_BUNDLE_IDENTIFIER = yumin.zhang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
