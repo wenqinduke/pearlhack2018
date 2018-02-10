@@ -10,7 +10,7 @@ import UIKit
 import Contacts
 
 class AddContactViewController: UIViewController {
-
+    /*
     @IBAction func Addcontact(_ sender: Any) {
         let contact = CNMutableContact()
         //contact.imageData = NSData() // The profile picture as a NSData object
@@ -35,6 +35,7 @@ class AddContactViewController: UIViewController {
         try! store.executeSaveRequest(saveRequest)
         
     }
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
 
