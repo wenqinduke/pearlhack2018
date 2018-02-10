@@ -13,7 +13,7 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        view.addBackground(imageName: "back.jpeg", contextMode: .scaleAspectFit)
+        view.addBackground(imageName: "back3.jpeg", contextMode: .scaleAspectFit)
     }
 
     override func didReceiveMemoryWarning() {
