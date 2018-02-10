@@ -12,6 +12,7 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
     
     var image: UIImagePickerController!
     var nameCard: UIImage!
+    var passInfo: String!
     
 
     @IBAction func SelectImage(_ sender: Any) {
@@ -131,7 +132,9 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
                 // print out language filed as an example
                 
                 let lan = json["language"] as? String
+                self.passInfo=lan
                 print(lan)
+                
             } catch let error as NSError {
                 print(error)
             }
@@ -141,6 +144,14 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
         
     }
     
+    @IBAction func confirm(_ sender: Any) {
+        performSegue(withIdentifier: "confirmContact", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var secondController=segue.destination as! AddContactViewController
+        secondController.myString=self.passInfo
+    }
     
 
     /*

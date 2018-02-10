@@ -36,8 +36,12 @@ class AddContactViewController: UIViewController {
         
     }
     */
+    @IBOutlet weak var contactInfo: UILabel!
+    var myString=String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        contactInfo.text = myString
 
         // Do any additional setup after loading the view.
     }
