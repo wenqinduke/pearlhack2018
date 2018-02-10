@@ -77,8 +77,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Nu-5p-sUF">
-                                <rect key="frame" x="0.0" y="64" width="375" height="411"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Nu-5p-sUF">
+                                <rect key="frame" x="38" y="77" width="303" height="387"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBC-xz-lJH">
                                 <rect key="frame" x="45" y="505" width="290" height="43"/>
@@ -138,18 +138,19 @@
                         </subviews>
                         <color key="backgroundColor" red="0.64290609720000003" green="0.75115128389999997" blue="0.9583670661" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="rBC-xz-lJH" firstAttribute="top" secondItem="4Nu-5p-sUF" secondAttribute="bottom" constant="5" id="7oe-ea-LJx"/>
+                            <constraint firstItem="rBC-xz-lJH" firstAttribute="top" secondItem="4Nu-5p-sUF" secondAttribute="bottom" constant="40" id="7oe-ea-LJx"/>
                             <constraint firstAttribute="trailing" secondItem="rBC-xz-lJH" secondAttribute="trailing" constant="50" id="OTF-in-XfU"/>
-                            <constraint firstItem="rBC-xz-lJH" firstAttribute="leading" secondItem="bhE-Py-AO6" secondAttribute="leadingMargin" constant="29" id="OxZ-iq-osO"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="rBC-xz-lJH" secondAttribute="trailing" constant="24" id="Sz6-MQ-hOV"/>
                             <constraint firstItem="wwd-PU-xlf" firstAttribute="trailing" secondItem="rBC-xz-lJH" secondAttribute="trailing" id="Xc1-6o-JCh"/>
                             <constraint firstItem="wwd-PU-xlf" firstAttribute="top" secondItem="rBC-xz-lJH" secondAttribute="bottom" constant="22" id="dnF-Ia-z3b"/>
                             <constraint firstItem="rBC-xz-lJH" firstAttribute="leading" secondItem="bhE-Py-AO6" secondAttribute="leading" constant="50" id="el1-Qj-xxG"/>
                             <constraint firstAttribute="bottom" secondItem="rBC-xz-lJH" secondAttribute="bottom" constant="119" id="jom-GM-zay"/>
+                            <constraint firstItem="4Nu-5p-sUF" firstAttribute="leading" secondItem="bhE-Py-AO6" secondAttribute="leadingMargin" constant="30" id="jta-aK-WwM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4Nu-5p-sUF" secondAttribute="trailing" constant="30" id="jw3-r5-JM7"/>
                             <constraint firstItem="rBC-xz-lJH" firstAttribute="leading" secondItem="4Nu-5p-sUF" secondAttribute="leading" id="lSN-bO-ebo"/>
                             <constraint firstItem="Xyl-Qw-ywx" firstAttribute="top" secondItem="wwd-PU-xlf" secondAttribute="bottom" constant="8" symbolic="YES" id="p34-uc-cv3"/>
                             <constraint firstItem="wwd-PU-xlf" firstAttribute="leading" secondItem="rBC-xz-lJH" secondAttribute="leading" id="rQ1-Lb-fbr"/>
                             <constraint firstItem="rBC-xz-lJH" firstAttribute="trailing" secondItem="4Nu-5p-sUF" secondAttribute="trailing" id="t26-3K-Ksj"/>
+                            <constraint firstItem="4Nu-5p-sUF" firstAttribute="top" secondItem="tSj-Jv-1JX" secondAttribute="bottom" constant="100" id="zrd-FL-GAg"/>
                         </constraints>
                     </view>
                     <toolbarItems/>

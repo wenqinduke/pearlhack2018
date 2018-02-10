@@ -52,6 +52,7 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image=info[UIImagePickerControllerOriginalImage] as? UIImage{
            NamecardImage.image=image
+           NamecardImage.contentMode = UIViewContentMode.scaleAspectFill
            nameCard=image
         }
         else{
@@ -71,11 +72,11 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
         super.viewDidLoad()
         scanCamera.backgroundColor = .clear
         scanCamera.layer.cornerRadius = 20
-        scanCamera.layer.borderWidth = 5
+        scanCamera.layer.borderWidth = 4
         scanCamera.layer.borderColor = UIColor.white.cgColor
         photoLibrary.backgroundColor = .clear
         photoLibrary.layer.cornerRadius = 20
-        photoLibrary.layer.borderWidth = 5
+        photoLibrary.layer.borderWidth = 4
         photoLibrary.layer.borderColor = UIColor.white.cgColor
         // Do any additional setup after loading the view.
     }
