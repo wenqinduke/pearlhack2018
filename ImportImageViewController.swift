@@ -131,6 +131,7 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
     private func loadCustomViewIntoController() {
         
         
+        
     }
     
     
@@ -202,7 +203,9 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
                 
                 
                 //transfer to next page
+                DispatchQueue.main.async{
                 self.performSegue(withIdentifier: "confirmContact", sender: self)
+                }
                 
                 
             } catch let error as NSError {
@@ -213,6 +216,9 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
         
         
     }
+    
+    
+  
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
