@@ -19,8 +19,16 @@ class SendMessageViewController: UIViewController, UITextFieldDelegate {
     
     var myStringx=String()
     
+    @IBAction func sendMessage(_ sender: Any) {
+        SendMessage(textContent: textF.text!)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        lbl.text = "whatever"
+        lbl.numberOfLines = 0
+        lbl.lineBreakMode = NSLineBreakMode.byWordWrapping
+        
         
         var textinfo = "hi my name is "
         textinfo += passedDict["first_name"]!
