@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9pv-A4-QxB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9pv-A4-QxB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -103,13 +103,6 @@
                                     <action selector="SelectImage:" destination="Hjl-sy-N9R" eventType="touchUpInside" id="bpw-aX-Qpu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xyl-Qw-ywx">
-                                <rect key="frame" x="159" y="619" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="SendMessage:" destination="Hjl-sy-N9R" eventType="touchUpInside" id="i9f-EF-wKg"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMc-L3-1cG">
                                 <rect key="frame" x="16" y="28" width="95" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -161,7 +154,6 @@
                             <constraint firstItem="4Nu-5p-sUF" firstAttribute="leading" secondItem="bhE-Py-AO6" secondAttribute="leadingMargin" constant="30" id="jta-aK-WwM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4Nu-5p-sUF" secondAttribute="trailing" constant="30" id="jw3-r5-JM7"/>
                             <constraint firstItem="rBC-xz-lJH" firstAttribute="leading" secondItem="4Nu-5p-sUF" secondAttribute="leading" id="lSN-bO-ebo"/>
-                            <constraint firstItem="Xyl-Qw-ywx" firstAttribute="top" secondItem="wwd-PU-xlf" secondAttribute="bottom" constant="8" symbolic="YES" id="p34-uc-cv3"/>
                             <constraint firstItem="wwd-PU-xlf" firstAttribute="leading" secondItem="rBC-xz-lJH" secondAttribute="leading" id="rQ1-Lb-fbr"/>
                             <constraint firstItem="rBC-xz-lJH" firstAttribute="trailing" secondItem="4Nu-5p-sUF" secondAttribute="trailing" id="t26-3K-Ksj"/>
                             <constraint firstItem="4Nu-5p-sUF" firstAttribute="top" secondItem="tSj-Jv-1JX" secondAttribute="bottom" constant="100" id="zrd-FL-GAg"/>
@@ -222,7 +214,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Udy-9Y-G0y">
-                                <rect key="frame" x="123" y="154" width="97" height="30"/>
+                                <rect key="frame" x="95" y="124" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
