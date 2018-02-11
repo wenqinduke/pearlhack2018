@@ -170,10 +170,10 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
         request.addValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
         
         //testing local image
-        //let image = UIImage(named: "card.jpeg")!
-        //let imageData  = UIImageJPEGRepresentation(image, 1.0)!
+        let image = UIImage(named: "card.jpeg")!
+        let imageData  = UIImageJPEGRepresentation(image, 1.0)!
         
-        let imageData  = UIImageJPEGRepresentation(img, 1.0)!
+        //let imageData  = UIImageJPEGRepresentation(img, 1.0)!
         
         request.httpBody = imageData
         

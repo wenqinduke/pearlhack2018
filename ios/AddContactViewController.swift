@@ -144,16 +144,19 @@ class AddContactViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var lbl: UILabel!
-   
-    
     @IBOutlet weak var textF: UITextField!
     
+    
+    @IBOutlet weak var lbl1: UILabel!
+    @IBOutlet weak var textF1: UITextField!
+    
     var myString=String()
+    var myString1=String()
     var contactinfo : [String: String] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        myString1="hhh"
         
         // move this model somewhere in the new view
         /*
@@ -167,10 +170,21 @@ class AddContactViewController: UIViewController, UITextFieldDelegate {
         textF.delegate = self
         textF.isHidden = true
         lbl.isUserInteractionEnabled = true
+        lbl.tag = 1
         let aSelector : Selector = #selector(AddContactViewController.lblTapped)
         let tapGesture = UITapGestureRecognizer(target: self, action: aSelector)
         tapGesture.numberOfTapsRequired = 1
         lbl.addGestureRecognizer(tapGesture)
+        
+        lbl1.text = myString1
+        textF1.delegate = self
+        textF1.isHidden = true
+        lbl1.isUserInteractionEnabled = true
+        lbl1.tag = 2
+        let aSelector1 : Selector = #selector(AddContactViewController.lbl1Tapped)
+        let tapGesture1 = UITapGestureRecognizer(target: self, action: aSelector1)
+        tapGesture1.numberOfTapsRequired = 1
+        lbl1.addGestureRecognizer(tapGesture1)
         
         addContacts.backgroundColor = .clear
         addContacts.layer.cornerRadius = 14
@@ -185,11 +199,24 @@ class AddContactViewController: UIViewController, UITextFieldDelegate {
         textF.text = lbl.text
     }
     
+    func lbl1Tapped(){
+        lbl1.isHidden = true
+        textF1.isHidden = false
+        textF1.text = lbl1.text
+    }
+    
     func textFieldShouldReturn(userText: UITextField) -> Bool {
         userText.resignFirstResponder()
-        textF.isHidden = true
-        lbl.isHidden = false
-        lbl.text = textF.text
+        if(userText.tag == 1) {
+            textF.isHidden = true
+            lbl.isHidden = false
+            lbl.text = textF.text
+        }
+        else if(userText.tag == 2) {
+            textF1.isHidden = true
+            lbl1.isHidden = false
+            lbl1.text = textF1.text
+        }
         return true
     }
 
