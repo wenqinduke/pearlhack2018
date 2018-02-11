@@ -13,6 +13,9 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
     var image: UIImagePickerController!
     var nameCard: UIImage!
     var passInfo: String!
+    var infodict : [String: String] = [:]
+    
+    
     
 
     
@@ -51,43 +54,6 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
         
     }
     
-    func SendMessage(textContent: String, toPerson: String) {
-        
-        print ("send message called ")
-        
-        var request = URLRequest(url: NSURL(string: "https://api.catapult.inetwork.com/v1/users/u-2j6eew23n4z4s7wrdzyj5ey/messages")! as URL)
-        request.httpMethod = "POST"
-        
-        let loginData = String(format: "%@:%@", "t-5m2durjfxxj4vh5kbpetega", "ewy4epz24p26ridgegp56yhwfkkgodry2jmgofq").data(using: String.Encoding.utf8)!
-        let base64LoginData = loginData.base64EncodedString()
-        request.setValue("Basic \(base64LoginData)", forHTTPHeaderField: "Authorization")
-        
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        
-        
-        let body = ["to" : "+19198138625",  // change here
-                    "from" : "+19842198388",
-                    "text" : "Yiqin Zhou" // change to textContent here
-        ]
-        do{
-            request.httpBody = try JSONSerialization.data(withJSONObject: body)
-        } catch {
-            print( "try throw an error")
-        }
-        
-        URLSession.shared.dataTask(with: request){ data, response, error in
-            guard let data = data, error == nil else {
-                print ("did not get data")
-                return
-            }
-            
-            }.resume()
-        
-        print ("message finish")
-        
-        
-    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image=info[UIImagePickerControllerOriginalImage] as? UIImage{
@@ -220,31 +186,46 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
                 self.passInfo = lan!
                 
                 
-               // print(json["regions"] as? String!)
+               
                 
-                /*
-                 
-                 example
-                let blogs = json["blogs"] as? [[String: Any]] {
-                    for blog in blogs {
-                        if let name = blog["name"] as? String {
-                            names.append(name)
-                        }
-                    }
-                }
-                 */
-                
-                //TODO: need to debug this
-                
+              
+                var alltext = [String]()
                 
                 for i in (json["regions"] as? [[String: Any]])! {
                     for j in (i["lines"] as? [[String: Any]])!{
                         for k in (j["words"] as? [[String: Any]])!{
-                            print(k["text"])
+                            let currentline = k["text"]!
+                            //print(currentline)
+                            alltext.append(currentline as! String)
                         }
                     }
                 }
- 
+                
+                
+                self.infodict["first_name"] = alltext[0]
+                self.infodict["last_name"] = alltext[1]
+                
+                
+                
+                
+                for i in alltext{
+                    print(i)
+                    if(self.checkNumber(str: i)){
+                        let matched = self.matches(for: "[0-9]", in: i)
+                        var temp : String = ""
+                        for m in matched{
+                            temp += m
+                        }
+                        self.infodict["phone number"] = temp
+                    }
+                    if(self.checkEmail(str: i)){
+                       self.infodict["email address"] = i
+                    }
+                }
+                
+                
+
+                
                     
 
                 //transfer to next page
@@ -263,7 +244,38 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
     }
     
     
-  
+    func matches(for regex: String, in text: String) -> [String] {
+        
+        do {
+            let regex = try NSRegularExpression(pattern: regex)
+            let results = regex.matches(in: text,
+                                        range: NSRange(text.startIndex..., in: text))
+            return results.map {
+                String(text[Range($0.range, in: text)!])
+            }
+        } catch let error {
+            print("invalid regex: \(error.localizedDescription)")
+            return []
+        }
+    }
+    
+    func checkNumber(str: String) -> Bool{
+        let matched = matches(for: "[0-9]", in: str)
+        if (matched.count > 9){
+            return true
+        }else{
+            return false
+        }
+    }
+    
+    func checkEmail(str: String) -> Bool{
+        let matched = matches(for: "@", in: str)
+        if (matched.count > 0){
+            return true
+        }else{
+            return false
+        }
+    }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -273,6 +285,7 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
             let secondController=segue.destination as! AddContactViewController
            
                 secondController.myString=self.passInfo
+                secondController.contactinfo = self.infodict
         //secondController.myString="hhh"
         default:
             print ("" as NSString)
