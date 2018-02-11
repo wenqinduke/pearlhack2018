@@ -64,7 +64,7 @@ class AddContactViewController: UIViewController, UITextFieldDelegate {
                 let homePhone = CNLabeledValue(label: CNLabelHome, value: CNPhoneNumber(stringValue :myString3 ))
                                 contact.phoneNumbers = [homePhone]
                 }
-                self.contactinfo["phone_number"] = myString3
+            self.contactinfo["phone_number"] = myString3
         }
         else{
             if textF3.text != "" {
