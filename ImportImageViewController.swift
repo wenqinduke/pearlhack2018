@@ -273,6 +273,7 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
         
     }
     
+    /*
     
     func matches(for regex: String, in text: String) -> [String] {
         
@@ -288,8 +289,23 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
             return []
         }
     }
+ */
+    
+    func matches(for regex: String, in text: String) -> [String] {
+        
+        do {
+            let regex = try NSRegularExpression(pattern: regex)
+            let nsString = text as NSString
+            let results = regex.matches(in: text, range: NSRange(location: 0, length: nsString.length))
+            return results.map { nsString.substring(with: $0.range)}
+        } catch let error {
+            print("invalid regex: \(error.localizedDescription)")
+            return []
+        }
+    }
     
     func checkNumber(str: String) -> Bool{
+        
         let matched = matches(for: "[0-9]", in: str)
         if (matched.count > 9){
             return true
@@ -300,6 +316,7 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
     
     func checkEmail(str: String) -> Bool{
         let matched = matches(for: "@", in: str)
+
         if (matched.count > 0){
             return true
         }else{
