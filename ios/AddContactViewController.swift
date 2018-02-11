@@ -150,13 +150,24 @@ class AddContactViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var lbl1: UILabel!
     @IBOutlet weak var textF1: UITextField!
     
+    @IBOutlet weak var lbl2: UILabel!
+    @IBOutlet weak var textF2: UITextField!
+    
+    @IBOutlet weak var lbl3: UILabel!
+    @IBOutlet weak var textF3: UITextField!
+    
+    
     var myString=String()
     var myString1=String()
+    var myString2=String()
+    var myString3=String()
     var contactinfo : [String: String] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         myString1="hhh"
+        myString2="hhh"
+        myString3="hhh"
         
         // move this model somewhere in the new view
         /*
@@ -186,6 +197,26 @@ class AddContactViewController: UIViewController, UITextFieldDelegate {
         tapGesture1.numberOfTapsRequired = 1
         lbl1.addGestureRecognizer(tapGesture1)
         
+        lbl2.text = myString2
+        textF2.delegate = self
+        textF2.isHidden = true
+        lbl2.isUserInteractionEnabled = true
+        lbl2.tag = 3
+        let aSelector2 : Selector = #selector(AddContactViewController.lbl2Tapped)
+        let tapGesture2 = UITapGestureRecognizer(target: self, action: aSelector2)
+        tapGesture2.numberOfTapsRequired = 1
+        lbl2.addGestureRecognizer(tapGesture2)
+        
+        lbl3.text = myString3
+        textF3.delegate = self
+        textF3.isHidden = true
+        lbl3.isUserInteractionEnabled = true
+        lbl3.tag = 4
+        let aSelector3 : Selector = #selector(AddContactViewController.lbl3Tapped)
+        let tapGesture3 = UITapGestureRecognizer(target: self, action: aSelector3)
+        tapGesture3.numberOfTapsRequired = 1
+        lbl3.addGestureRecognizer(tapGesture3)
+        
         addContacts.backgroundColor = .clear
         addContacts.layer.cornerRadius = 14
         addContacts.layer.borderWidth = 4
@@ -205,6 +236,18 @@ class AddContactViewController: UIViewController, UITextFieldDelegate {
         textF1.text = lbl1.text
     }
     
+    func lbl2Tapped(){
+        lbl2.isHidden = true
+        textF2.isHidden = false
+        textF2.text = lbl2.text
+    }
+    
+    func lbl3Tapped(){
+        lbl3.isHidden = true
+        textF3.isHidden = false
+        textF3.text = lbl3.text
+    }
+    
     func textFieldShouldReturn(userText: UITextField) -> Bool {
         userText.resignFirstResponder()
         if(userText.tag == 1) {
@@ -216,6 +259,16 @@ class AddContactViewController: UIViewController, UITextFieldDelegate {
             textF1.isHidden = true
             lbl1.isHidden = false
             lbl1.text = textF1.text
+        }
+        else if(userText.tag == 3) {
+            textF2.isHidden = true
+            lbl2.isHidden = false
+            lbl2.text = textF2.text
+        }
+        else if(userText.tag == 4) {
+            textF3.isHidden = true
+            lbl3.isHidden = false
+            lbl3.text = textF3.text
         }
         return true
     }
