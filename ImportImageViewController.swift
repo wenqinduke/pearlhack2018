@@ -125,9 +125,11 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
     }
     
     
-    
+    //confirm action
     @IBAction func detectInfo(_ sender: Any) {
+        // todo check if image namecard exists before calling requesting other wise pop a warning to the user
         requesting(img: nameCard)
+        
     }
     
     
@@ -182,7 +184,7 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
                 self.passInfo = lan!
                 
                 
-                print(json["regions"] as? String!)
+               // print(json["regions"] as? String!)
                 
                 /*
                 let blogs = json["blogs"] as? [[String: Any]] {
@@ -194,6 +196,7 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
                 }
                  */
                     
+
                 self.performSegue(withIdentifier: "confirmContact", sender: self)
                 
                 
@@ -206,11 +209,6 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
         
     }
     
-    /*
-    @IBAction func confirm(_ sender: Any) {
-        performSegue(withIdentifier: "confirmContact", sender: self)
-    }
-     */
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {

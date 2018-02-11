@@ -10,7 +10,7 @@ import UIKit
 import Contacts
 
 class AddContactViewController: UIViewController {
-    /*
+    
     @IBAction func Addcontact(_ sender: Any) {
         let contact = CNMutableContact()
         //contact.imageData = NSData() // The profile picture as a NSData object
@@ -37,7 +37,7 @@ class AddContactViewController: UIViewController {
         try! store.execute(saveRequest)
         
     }
-    */
+    
     @IBOutlet weak var contactInfo: UILabel!
     var myString=String()
     
