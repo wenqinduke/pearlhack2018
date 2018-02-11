@@ -65,10 +65,10 @@
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
         </scene>
-        <!--Import Image View Controller-->
+        <!--importImage-->
         <scene sceneID="oFE-OQ-qlN">
             <objects>
-                <viewController id="Hjl-sy-N9R" customClass="ImportImageViewController" customModule="ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="importImage" title="importImage" id="Hjl-sy-N9R" customClass="ImportImageViewController" customModule="ios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tSj-Jv-1JX"/>
                         <viewControllerLayoutGuide type="bottom" id="uRK-pQ-hFr"/>

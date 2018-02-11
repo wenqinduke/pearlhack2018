@@ -36,7 +36,36 @@ class AddContactViewController: UIViewController {
         saveRequest.add(contact, toContainerWithIdentifier:nil)
         try! store.execute(saveRequest)
         
+        //if success
+        confirmation()
+        
     }
+    
+    private func confirmation() {
+        
+        
+        let alert = UIAlertController(title: nil, message: "You have successfully add the contact!", preferredStyle: .alert)
+        
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        //loadingIndicator.startAnimating();
+        
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+            UIAlertAction in
+            NSLog("OK Pressed")
+        }
+        
+        alert.addAction(okAction)
+        
+        
+        
+    }
+
+    
     
     @IBOutlet weak var contactInfo: UILabel!
     var myString=String()
