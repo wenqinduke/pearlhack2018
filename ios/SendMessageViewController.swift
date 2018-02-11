@@ -31,6 +31,11 @@ class SendMessageViewController: UIViewController, UITextFieldDelegate {
         lbl.numberOfLines = 0
         lbl.lineBreakMode = NSLineBreakMode.byWordWrapping
         
+        sendButton.backgroundColor = .clear
+        sendButton.layer.cornerRadius = 20
+        sendButton.layer.borderWidth = 4
+        sendButton.layer.borderColor = UIColor.white.cgColor
+
         
         var textinfo = "hi my name is "
         textinfo += passedDict["first_name"]!
@@ -80,6 +85,7 @@ class SendMessageViewController: UIViewController, UITextFieldDelegate {
     }
     
 
+    @IBOutlet weak var sendButton: UIButton!
     
     func lblTapped(){
         lbl.isHidden = true
