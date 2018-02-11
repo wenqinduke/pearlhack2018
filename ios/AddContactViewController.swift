@@ -9,7 +9,7 @@
 import UIKit
 import Contacts
 
-class AddContactViewController: UIViewController {
+class AddContactViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var addContacts: UIButton!
     
@@ -76,20 +76,42 @@ class AddContactViewController: UIViewController {
 
     
     
-    @IBOutlet weak var contactInfo: UILabel!
+    @IBOutlet weak var textF: UITextField!
+    
+    @IBOutlet weak var lbl: UILabel!
+    
     var myString=String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        contactInfo.text = myString
+        lbl.text = myString
+        textF.delegate = self
+        textF.isHidden = true
+        lbl.isUserInteractionEnabled = true
+        let aSelector : Selector = #selector(AddContactViewController.lblTapped)
+        let tapGesture = UITapGestureRecognizer(target: self, action: aSelector)
+        tapGesture.numberOfTapsRequired = 1
+        lbl.addGestureRecognizer(tapGesture)
         
         addContacts.backgroundColor = .clear
         addContacts.layer.cornerRadius = 20
         addContacts.layer.borderWidth = 4
         addContacts.layer.borderColor = UIColor.white.cgColor
-
-
-        // Do any additional setup after loading the view.
+        
+    }
+    
+    func lblTapped(){
+        lbl.isHidden = true
+        textF.isHidden = false
+        textF.text = lbl.text
+    }
+    
+    func textFieldShouldReturn(userText: UITextField) -> Bool {
+        userText.resignFirstResponder()
+        textF.isHidden = true
+        lbl.isHidden = false
+        lbl.text = textF.text
+        return true
     }
 
     override func didReceiveMemoryWarning() {
