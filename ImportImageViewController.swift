@@ -14,6 +14,8 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
     var nameCard: UIImage!
     var passInfo: String!
     
+
+    
     @IBOutlet weak var scanCamera: UIButton!
 
     @IBOutlet weak var photoLibrary: UIButton!
@@ -117,6 +119,8 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
         photoLibrary.layer.borderWidth = 4
         photoLibrary.layer.borderColor = UIColor.white.cgColor
         // Do any additional setup after loading the view.
+        
+     
     }
     
     override func didReceiveMemoryWarning() {
@@ -124,11 +128,25 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
         // Dispose of any resources that can be recreated.
     }
     
+    private func loadCustomViewIntoController() {
+        
+        
+        
+    }
+    
     
     //confirm action
     @IBAction func detectInfo(_ sender: Any) {
-        // todo check if image namecard exists before calling requesting other wise pop a warning to the user
-        requesting(img: nameCard)
+
+        print ("testing")
+        if let image=nameCard as? UIImage{
+            requesting(img: nameCard)
+        }
+        else{
+            print ("success")
+            loadCustomViewIntoController()
+        }
+
         
     }
     
@@ -187,6 +205,8 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
                // print(json["regions"] as? String!)
                 
                 /*
+                 
+                 example
                 let blogs = json["blogs"] as? [[String: Any]] {
                     for blog in blogs {
                         if let name = blog["name"] as? String {
@@ -195,9 +215,24 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
                     }
                 }
                  */
+                
+                //TODO: need to debug this
+                
+                /*
+                for i in json["regions"] {
+                    for j in i["lines"]{
+                        for k in j["words"]{
+                            print(k["text"])
+                        }
+                    }
+                }
+ */
                     
 
+                //transfer to next page
+                DispatchQueue.main.async{
                 self.performSegue(withIdentifier: "confirmContact", sender: self)
+                }
                 
                 
             } catch let error as NSError {
@@ -210,13 +245,16 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
     }
     
     
+  
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "confirmContact" as NSString:
             
             let secondController=segue.destination as! AddContactViewController
-            if (!self.passInfo.isEmpty){
-                secondController.myString=self.passInfo}
+           
+                secondController.myString=self.passInfo
         //secondController.myString="hhh"
         default:
             print ("" as NSString)
