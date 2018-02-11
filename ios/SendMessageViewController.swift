@@ -15,11 +15,14 @@ class SendMessageViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textF: UITextField!
     
     
+    var passedDict: [String:String]=[:]
+    
     var myStringx=String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        myStringx="hhh"
+        myStringx=passedDict["first_name"]!
+        //myStringx="hhh"
         
         // move this model somewhere in the new view
         /*

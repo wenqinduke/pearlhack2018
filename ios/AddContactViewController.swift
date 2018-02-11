@@ -84,6 +84,7 @@ class AddContactViewController: UIViewController, UITextFieldDelegate {
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SendMessageView") as! SendMessageViewController
+            nextViewController.passedDict=self.contactinfo
             self.present(nextViewController, animated:true, completion:nil)
                 
             //print ("continue")
