@@ -21,7 +21,11 @@ class SendMessageViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        myStringx=passedDict["first_name"]!
+        
+        var textinfo = "hi my name is "
+        textinfo += passedDict["first_name"]!
+        textinfo += ". My phone number is 123-456-7890."
+        myStringx = textinfo
         //myStringx="hhh"
         
         // move this model somewhere in the new view
@@ -60,6 +64,56 @@ class SendMessageViewController: UIViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func SendMessage(textContent: String) {
+        
+        print ("send message called ")
+        
+        var request = URLRequest(url: NSURL(string: "https://api.catapult.inetwork.com/v1/users/u-2j6eew23n4z4s7wrdzyj5ey/messages")! as URL)
+        request.httpMethod = "POST"
+        
+        let loginData = String(format: "%@:%@", "t-5m2durjfxxj4vh5kbpetega", "ewy4epz24p26ridgegp56yhwfkkgodry2jmgofq").data(using: String.Encoding.utf8)!
+        let base64LoginData = loginData.base64EncodedString()
+        request.setValue("Basic \(base64LoginData)", forHTTPHeaderField: "Authorization")
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        var toPerson = self.passedDict["phone_number"]
+        
+        // for testing purpose, comment out the following line if want real number from card
+        toPerson = "+18572225869"
+        
+        let body = ["to" : toPerson,  // change here
+            "from" : "+19842198388",
+            "text" : textContent // change to textContent here
+        ]
+        do{
+            request.httpBody = try JSONSerialization.data(withJSONObject: body)
+        } catch {
+            print( "try throw an error")
+        }
+        
+        URLSession.shared.dataTask(with: request){ data, response, error in
+            guard let data = data, error == nil else {
+                print ("did not get data")
+                return
+            }
+            
+            }.resume()
+        
+        print ("message finish")
+        
+        
+        
+        //        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+        //            UIAlertAction in
+        //            NSLog("OK Pressed")
+        //        }
+        //        alert.addAction(okAction)
+        
+        
+        
     }
     
     
