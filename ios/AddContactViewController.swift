@@ -9,12 +9,13 @@
 import UIKit
 import Contacts
 
-class AddContactViewController: UIViewController {
+class AddContactViewController: UIViewController, UITextFieldDelegate {
+    
+    @IBOutlet weak var addContacts: UIButton!
     
     @IBAction func Addcontact(_ sender: Any) {
         let contact = CNMutableContact()
         //contact.imageData = NSData() // The profile picture as a NSData object
-        print ("here")
         contact.givenName = "John"
         contact.familyName = "Appleseed"
         
@@ -45,8 +46,8 @@ class AddContactViewController: UIViewController {
     
     private func confirmation() {
         
-        
-        let alert = UIAlertController(title: nil, message: "You have successfully add the contact!", preferredStyle: .alert)
+        print ("entered confirmation")
+        let alert = UIAlertController(title:"Success", message:"Do you want to text the person you added?", preferredStyle: .alert)
         
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
         loadingIndicator.hidesWhenStopped = true
@@ -55,14 +56,15 @@ class AddContactViewController: UIViewController {
         
         alert.view.addSubview(loadingIndicator)
         present(alert, animated: true, completion: nil)
-        
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
-            UIAlertAction in
-            NSLog("OK Pressed")
-        }
-        
-        alert.addAction(okAction)
-        
+        alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler: { action in
+            print ("continue")
+            
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { action in
+            print ("cancel")
+        }))
+
+   
     }
     
     func SendMessage(textContent: String, toPerson: String) {
@@ -101,20 +103,58 @@ class AddContactViewController: UIViewController {
         print ("message finish")
         
         
+
+//        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+//            UIAlertAction in
+//            NSLog("OK Pressed")
+//        }
+//        alert.addAction(okAction)
+        
+
+
     }
     
 
     
     
-    @IBOutlet weak var contactInfo: UILabel!
+    @IBOutlet weak var lbl: UILabel!
+   
+    
+    @IBOutlet weak var textF: UITextField!
+    
     var myString=String()
     var contactinfo : [String: String] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        contactInfo.text = myString
-
-        // Do any additional setup after loading the view.
+        lbl.text = myString
+        textF.delegate = self
+        textF.isHidden = true
+        lbl.isUserInteractionEnabled = true
+        let aSelector : Selector = #selector(AddContactViewController.lblTapped)
+        let tapGesture = UITapGestureRecognizer(target: self, action: aSelector)
+        tapGesture.numberOfTapsRequired = 1
+        lbl.addGestureRecognizer(tapGesture)
+        
+        addContacts.backgroundColor = .clear
+        addContacts.layer.cornerRadius = 14
+        addContacts.layer.borderWidth = 4
+        addContacts.layer.borderColor = UIColor.white.cgColor
+        
+    }
+    
+    func lblTapped(){
+        lbl.isHidden = true
+        textF.isHidden = false
+        textF.text = lbl.text
+    }
+    
+    func textFieldShouldReturn(userText: UITextField) -> Bool {
+        userText.resignFirstResponder()
+        textF.isHidden = true
+        lbl.isHidden = false
+        lbl.text = textF.text
+        return true
     }
 
     override func didReceiveMemoryWarning() {

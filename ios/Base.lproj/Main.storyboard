@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9pv-A4-QxB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9pv-A4-QxB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="ChalkboardSE.ttc">
+            <string>ChalkboardSE-Bold</string>
+            <string>ChalkboardSE-Regular</string>
+        </array>
+        <array key="Chalkduster.ttf">
+            <string>Chalkduster</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--First-->
         <scene sceneID="hNz-n2-bh7">
@@ -85,8 +94,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="Nec-aV-kME"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
-                                <color key="tintColor" red="0.64290609720000003" green="0.75115128389999997" blue="0.9583670661" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="19"/>
+                                <color key="tintColor" red="0.66984338099517649" green="0.74088088740591629" blue="0.9835046956336787" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Choose from Photo Library">
                                     <color key="titleColor" red="0.98080004762792317" green="0.98791411444703747" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -94,7 +103,7 @@
                                     <action selector="SelectImage:" destination="Hjl-sy-N9R" eventType="touchUpInside" id="bpw-aX-Qpu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xyl-Qw-ywx">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xyl-Qw-ywx">
                                 <rect key="frame" x="159" y="619" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -104,7 +113,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMc-L3-1cG">
                                 <rect key="frame" x="16" y="28" width="95" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="19"/>
                                 <state key="normal" title="&lt; Back">
                                     <color key="titleColor" red="0.98080004759999995" green="0.98791411439999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -123,7 +132,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
+                                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="19"/>
                                 </variation>
                                 <connections>
                                     <action selector="ScanImage:" destination="Hjl-sy-N9R" eventType="touchUpInside" id="2g0-Sf-Mek"/>
@@ -132,7 +141,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNB-Bc-hDd">
                                 <rect key="frame" x="287" y="49" width="103" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="19"/>
                                 <state key="normal" title="Done &gt; ">
                                     <color key="titleColor" red="0.98080004759999995" green="0.98791411439999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -183,38 +192,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Y0-2A-65T">
-                                <rect key="frame" x="105" y="503" width="165" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add to contact"/>
-                                <connections>
-                                    <action selector="Addcontact:" destination="TMz-Eg-vTT" eventType="touchUpInside" id="co0-dA-gdS"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4J-Aj-ZnE">
-                                <rect key="frame" x="150" y="88" width="42" height="21"/>
+                                <rect key="frame" x="150" y="88" width="42" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Y0-2A-65T">
+                                <rect key="frame" x="105" y="545" width="165" height="30"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
+                                <color key="tintColor" red="0.66984338099999996" green="0.74088088740000002" blue="0.98350469559999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Add to Contacts!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Addcontact:" destination="TMz-Eg-vTT" eventType="touchUpInside" id="co0-dA-gdS"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvk-uv-Ud8">
-                                <rect key="frame" x="16" y="-30" width="84" height="139"/>
+                                <rect key="frame" x="26" y="-11" width="84" height="139"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="19"/>
+                                <state key="normal" title="&lt; Back">
+                                    <color key="titleColor" red="0.98080004759999995" green="0.98791411439999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="Hjl-sy-N9R" kind="presentation" id="HGx-BP-kCw"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="G2k-Td-ygv">
-                                <rect key="frame" x="51" y="117" width="273" height="262"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Udy-9Y-G0y">
+                                <rect key="frame" x="123" y="154" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.66676207040000002" green="0.79266558769999995" blue="0.98350469559999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="0Y0-2A-65T" secondAttribute="trailing" constant="90" id="Ku8-aa-v6a"/>
+                            <constraint firstItem="0Y0-2A-65T" firstAttribute="leading" secondItem="exT-GR-SP8" secondAttribute="leadingMargin" constant="90" id="eig-7K-hbz"/>
+                            <constraint firstItem="EA6-ww-S3w" firstAttribute="top" secondItem="0Y0-2A-65T" secondAttribute="bottom" constant="90" id="hjM-3N-M44"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="contactInfo" destination="F4J-Aj-ZnE" id="QzA-hY-SNf"/>
+                        <outlet property="addContacts" destination="0Y0-2A-65T" id="WFI-O9-cYs"/>
+                        <outlet property="lbl" destination="F4J-Aj-ZnE" id="DWx-M4-eVe"/>
+                        <outlet property="textF" destination="Udy-9Y-G0y" id="Jtc-7I-ksv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E1T-mu-Ano" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -227,9 +252,8 @@
         <image name="cardImage" width="240" height="240"/>
         <image name="coverpic" width="512" height="512"/>
         <image name="first" width="30" height="30"/>
-        <image name="loading" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bxq-1Y-84V"/>
+        <segue reference="HGx-BP-kCw"/>
     </inferredMetricsTieBreakers>
 </document>
