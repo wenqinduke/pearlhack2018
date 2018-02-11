@@ -16,11 +16,62 @@ class AddContactViewController: UIViewController, UITextFieldDelegate {
     @IBAction func Addcontact(_ sender: Any) {
         let contact = CNMutableContact()
         //contact.imageData = NSData() // The profile picture as a NSData object
-        if myString != ""{
-            contact.givenName = myString
+//        if myString != ""{
+//            contact.givenName = myString
+//        }
+//        if myString1 != ""{
+//            contact.familyName = myString2
+//        }
+        if textF.isHidden{
+            if myString != ""{
+                contact.givenName = myString
+            }
         }
-        if myString1 != ""{
-            contact.familyName = myString2
+        else{
+            if textF.text != ""{
+                contact.givenName = textF.text!
+            }
+        }
+        
+        if textF1.isHidden{
+            if myString1 != ""{
+                contact.familyName = myString1
+            }
+        }
+        else{
+            if textF1.text != ""{
+                contact.familyName = textF1.text!
+            }
+        }
+        
+        if textF2.isHidden{
+            if myString2 != ""{
+                let homie = myString2
+                let workEmail = CNLabeledValue(label:CNLabelHome, value: homie as NSString)
+                contact.emailAddresses = [workEmail]
+            }
+        }
+        else{
+            if textF2.text != ""{
+                let homie = textF2.text
+                let workEmail = CNLabeledValue(label:CNLabelHome, value: homie! as NSString)
+                contact.emailAddresses = [workEmail]
+            }
+        }
+        
+        if textF3.isHidden{
+            if myString3 != "" {
+                let homePhone = CNLabeledValue(label: CNLabelHome, value: CNPhoneNumber(stringValue :myString3 ))
+                                contact.phoneNumbers = [homePhone]
+                }
+                self.contactinfo["phone_number"] = myString3
+        }
+        else{
+            if textF3.text != "" {
+                let homePhone = CNLabeledValue(label: CNLabelHome, value: CNPhoneNumber(stringValue :textF3.text! ))
+                contact.phoneNumbers = [homePhone]
+            }
+            self.contactinfo["phone_number"] = textF3.text
         }
         
         //contact.givenName = self.contactinfo["first_name"]!
@@ -29,17 +80,17 @@ class AddContactViewController: UIViewController, UITextFieldDelegate {
         contact.jobTitle = "manager"
         
         // check "if x is NSNull()"
-        if myString2 != ""{
-            let homie = myString2
-            let workEmail = CNLabeledValue(label:CNLabelHome, value: homie as NSString)
-            contact.emailAddresses = [workEmail]
-        }
+//        if myString2 != ""{
+//            let homie = myString2
+//            let workEmail = CNLabeledValue(label:CNLabelHome, value: homie as NSString)
+//            contact.emailAddresses = [workEmail]
+//        }
         
         
-        if myString3 != "" {
-                let homePhone = CNLabeledValue(label: CNLabelHome, value: CNPhoneNumber(stringValue :myString3 ))
-                contact.phoneNumbers = [homePhone]
-        }
+//        if myString3 != "" {
+//                let homePhone = CNLabeledValue(label: CNLabelHome, value: CNPhoneNumber(stringValue :myString3 ))
+//                contact.phoneNumbers = [homePhone]
+//        }
 
         
         let homeAddress = CNMutablePostalAddress()
@@ -72,7 +123,13 @@ class AddContactViewController: UIViewController, UITextFieldDelegate {
         alert.view.addSubview(loadingIndicator)
         present(alert, animated: true, completion: nil)
         alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler: { action in
-            print ("continue")
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SendMessageView") as! SendMessageViewController
+            nextViewController.passedDict=self.contactinfo
+            self.present(nextViewController, animated:true, completion:nil)
+                
+            //print ("continue")
             
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { action in
