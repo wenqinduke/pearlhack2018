@@ -16,16 +16,40 @@ class AddContactViewController: UIViewController, UITextFieldDelegate {
     @IBAction func Addcontact(_ sender: Any) {
         let contact = CNMutableContact()
         //contact.imageData = NSData() // The profile picture as a NSData object
-        contact.givenName = "John"
-        contact.familyName = "Appleseed"
+        if self.contactinfo["first_name"] != nil{
+            contact.givenName = self.contactinfo["first_name"]!
+        }
+        if self.contactinfo["last_name"] != nil{
+            contact.familyName = self.contactinfo["last_name"]!
+        }
+        
+        //contact.givenName = self.contactinfo["first_name"]!
+        //contact.familyName = self.contactinfo["last_name"]!
         
         contact.jobTitle = "manager"
         
-        let homie = "john@example.com"
-        let workie = "j.appleseed@icloud.com"
-        let homeEmail = CNLabeledValue(label:CNLabelHome, value: homie as NSString)
-        let workEmail = CNLabeledValue(label:CNLabelWork, value:workie as NSString)
-        contact.emailAddresses = [homeEmail, workEmail]
+        // check "if x is NSNull()"
+        if self.contactinfo["email_address"] != nil{
+            let homie = self.contactinfo["email_address"]!
+            let workEmail = CNLabeledValue(label:CNLabelHome, value: homie as NSString)
+            contact.emailAddresses = [workEmail]
+        }
+        
+        
+//        let homie = self.contactinfo["email_address"]!
+//        let workie = "j.appleseed@icloud.com"
+//        let homeEmail = CNLabeledValue(label:CNLabelHome, value: homie as NSString)
+//        let workEmail = CNLabeledValue(label:CNLabelWork, value:workie as NSString)
+//        contact.emailAddresses = [homeEmail, workEmail]
+        
+        if self.contactinfo["phone_number"] != nil {
+                let homePhone = CNLabeledValue(label: CNLabelHome, value: CNPhoneNumber(stringValue :self.contactinfo["phone_number"]! ))
+            
+                contact.phoneNumbers = [homePhone]
+        }
+//        let homePhone = CNLabeledValue(label: CNLabelHome, value: CNPhoneNumber(stringValue :self.contactinfo["phone_number"]! ))
+//
+//        contact.phoneNumbers = [homePhone]
         
         let homeAddress = CNMutablePostalAddress()
         homeAddress.street = "1 Infinite Loop"
@@ -67,6 +91,8 @@ class AddContactViewController: UIViewController, UITextFieldDelegate {
    
     }
     
+ 
+    
     func SendMessage(textContent: String, toPerson: String) {
         
         print ("send message called ")
@@ -82,9 +108,9 @@ class AddContactViewController: UIViewController, UITextFieldDelegate {
         
         
         
-        let body = ["to" : "+19198138625",  // change here
+        let body = ["to" : toPerson,  // change here
             "from" : "+19842198388",
-            "text" : "Yiqin Zhou" // change to textContent here
+            "text" : textContent // change to textContent here
         ]
         do{
             request.httpBody = try JSONSerialization.data(withJSONObject: body)
@@ -127,6 +153,16 @@ class AddContactViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        // move this model somewhere in the new view
+        /*
+         tested did work
+        let messageReceiver = self.contactinfo["phone_number"]
+        let message = "this is xxz"
+        SendMessage(textContent : message, toPerson : messageReceiver!)
+        */
+        
         lbl.text = myString
         textF.delegate = self
         textF.isHidden = true

@@ -65,6 +65,15 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
             //error message
         
         }
+        let size = NamecardImage.image?.size
+        
+        //let widthRatio = 0.5
+        //let heightRatio = 0.5
+        
+        //var newSize = CGSize(size!.width * widthRatio, size.height * heightRatio)
+        
+       // let rect = CGRect(x:0 ,y:0, width:newSize.width, height:newSize.height)
+        
         self.dismiss(animated: true, completion: nil)
         
         
@@ -161,10 +170,10 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
         request.addValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
         
         //testing local image
-        let image = UIImage(named: "card.jpeg")!
-        let imageData  = UIImageJPEGRepresentation(image, 1.0)!
+        //let image = UIImage(named: "card.jpeg")!
+        //let imageData  = UIImageJPEGRepresentation(image, 1.0)!
         
-        //let imageData  = UIImageJPEGRepresentation(img, 1.0)!
+        let imageData  = UIImageJPEGRepresentation(img, 1.0)!
         
         request.httpBody = imageData
         
@@ -204,7 +213,8 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
                 
                 self.infodict["first_name"] = alltext[0]
                 self.infodict["last_name"] = alltext[1]
-                
+                self.infodict["phone_number"] = "+18572225869"
+
                 
                 
                 
@@ -216,10 +226,10 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
                         for m in matched{
                             temp += m
                         }
-                        self.infodict["phone number"] = temp
+                        self.infodict["phone_number"] = temp
                     }
                     if(self.checkEmail(str: i)){
-                       self.infodict["email address"] = i
+                       self.infodict["email_address"] = i
                     }
                 }
                 
