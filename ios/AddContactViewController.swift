@@ -14,9 +14,11 @@ class AddContactViewController: UIViewController {
     @IBAction func Addcontact(_ sender: Any) {
         let contact = CNMutableContact()
         //contact.imageData = NSData() // The profile picture as a NSData object
-        
+        print ("here")
         contact.givenName = "John"
         contact.familyName = "Appleseed"
+        
+        contact.jobTitle = "manager"
         
         let homie = "john@example.com"
         let workie = "j.appleseed@icloud.com"
@@ -36,7 +38,36 @@ class AddContactViewController: UIViewController {
         saveRequest.add(contact, toContainerWithIdentifier:nil)
         try! store.execute(saveRequest)
         
+        //if success
+        confirmation()
+        
     }
+    
+    private func confirmation() {
+        
+        
+        let alert = UIAlertController(title: nil, message: "You have successfully add the contact!", preferredStyle: .alert)
+        
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        //loadingIndicator.startAnimating();
+        
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+            UIAlertAction in
+            NSLog("OK Pressed")
+        }
+        
+        alert.addAction(okAction)
+        
+        
+        
+    }
+
+    
     
     @IBOutlet weak var contactInfo: UILabel!
     var myString=String()
@@ -53,7 +84,6 @@ class AddContactViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 

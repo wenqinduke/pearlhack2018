@@ -129,6 +129,24 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
     }
     
     private func loadCustomViewIntoController() {
+       
+        
+        let alert = UIAlertController(title: nil, message: "Please add a namecard", preferredStyle: .alert)
+        
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        //loadingIndicator.startAnimating();
+        
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+            UIAlertAction in
+            NSLog("OK Pressed")
+        }
+        
+        alert.addAction(okAction)
         
         
         
