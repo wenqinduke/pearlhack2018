@@ -181,6 +181,19 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
                 print(lan!)
                 self.passInfo = lan!
                 
+                
+                print(json["regions"] as? String!)
+                
+                /*
+                let blogs = json["blogs"] as? [[String: Any]] {
+                    for blog in blogs {
+                        if let name = blog["name"] as? String {
+                            names.append(name)
+                        }
+                    }
+                }
+                 */
+                    
                 self.performSegue(withIdentifier: "confirmContact", sender: self)
                 
                 
