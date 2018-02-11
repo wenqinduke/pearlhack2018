@@ -11,6 +11,8 @@ import Contacts
 
 class AddContactViewController: UIViewController {
     
+    @IBOutlet weak var addContacts: UIButton!
+    
     @IBAction func Addcontact(_ sender: Any) {
         let contact = CNMutableContact()
         //contact.imageData = NSData() // The profile picture as a NSData object
@@ -75,6 +77,12 @@ class AddContactViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         contactInfo.text = myString
+        
+        addContacts.backgroundColor = .clear
+        addContacts.layer.cornerRadius = 20
+        addContacts.layer.borderWidth = 4
+        addContacts.layer.borderColor = UIColor.white.cgColor
+
 
         // Do any additional setup after loading the view.
     }

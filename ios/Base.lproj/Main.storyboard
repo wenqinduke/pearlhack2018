@@ -214,9 +214,10 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.79832080913451087" blue="0.85843114160318557" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.66676207040000002" green="0.79266558769999995" blue="0.98350469559999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="addContacts" destination="0Y0-2A-65T" id="WFI-O9-cYs"/>
                         <outlet property="contactInfo" destination="F4J-Aj-ZnE" id="QzA-hY-SNf"/>
                     </connections>
                 </viewController>
