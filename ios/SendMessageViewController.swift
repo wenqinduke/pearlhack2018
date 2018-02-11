@@ -32,9 +32,9 @@ class SendMessageViewController: UIViewController, UITextFieldDelegate {
         lbl.lineBreakMode = NSLineBreakMode.byWordWrapping
         
         
-        var textinfo = "hi my name is "
+        var textinfo = "hi, "
         textinfo += passedDict["first_name"]!
-        textinfo += ". My phone number is 123-456-7890."
+        textinfo += "My name is PearlHack. My phone number is 123-456-7890."
         myStringx = textinfo
         //myStringx="hhh"
         
