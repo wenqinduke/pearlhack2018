@@ -16,11 +16,62 @@ class AddContactViewController: UIViewController, UITextFieldDelegate {
     @IBAction func Addcontact(_ sender: Any) {
         let contact = CNMutableContact()
         //contact.imageData = NSData() // The profile picture as a NSData object
-        if self.contactinfo["first_name"] != nil{
-            contact.givenName = self.contactinfo["first_name"]!
+//        if myString != ""{
+//            contact.givenName = myString
+//        }
+//        if myString1 != ""{
+//            contact.familyName = myString2
+//        }
+        if textF.isHidden{
+            if myString != ""{
+                contact.givenName = myString
+            }
         }
-        if self.contactinfo["last_name"] != nil{
-            contact.familyName = self.contactinfo["last_name"]!
+        else{
+            if textF.text != ""{
+                contact.givenName = textF.text!
+            }
+        }
+        
+        if textF1.isHidden{
+            if myString1 != ""{
+                contact.familyName = myString1
+            }
+        }
+        else{
+            if textF1.text != ""{
+                contact.familyName = textF1.text!
+            }
+        }
+        
+        if textF2.isHidden{
+            if myString2 != ""{
+                let homie = myString2
+                let workEmail = CNLabeledValue(label:CNLabelHome, value: homie as NSString)
+                contact.emailAddresses = [workEmail]
+            }
+        }
+        else{
+            if textF2.text != ""{
+                let homie = textF2.text
+                let workEmail = CNLabeledValue(label:CNLabelHome, value: homie! as NSString)
+                contact.emailAddresses = [workEmail]
+            }
+        }
+        
+        if textF3.isHidden{
+            if myString3 != "" {
+                let homePhone = CNLabeledValue(label: CNLabelHome, value: CNPhoneNumber(stringValue :myString3 ))
+                                contact.phoneNumbers = [homePhone]
+                }
+            self.contactinfo["phone_number"] = myString3
+        }
+        else{
+            if textF3.text != "" {
+                let homePhone = CNLabeledValue(label: CNLabelHome, value: CNPhoneNumber(stringValue :textF3.text! ))
+                contact.phoneNumbers = [homePhone]
+            }
+            self.contactinfo["phone_number"] = textF3.text
         }
         
         //contact.givenName = self.contactinfo["first_name"]!
@@ -29,27 +80,18 @@ class AddContactViewController: UIViewController, UITextFieldDelegate {
         contact.jobTitle = "manager"
         
         // check "if x is NSNull()"
-        if self.contactinfo["email_address"] != nil{
-            let homie = self.contactinfo["email_address"]!
-            let workEmail = CNLabeledValue(label:CNLabelHome, value: homie as NSString)
-            contact.emailAddresses = [workEmail]
-        }
+//        if myString2 != ""{
+//            let homie = myString2
+//            let workEmail = CNLabeledValue(label:CNLabelHome, value: homie as NSString)
+//            contact.emailAddresses = [workEmail]
+//        }
         
         
-//        let homie = self.contactinfo["email_address"]!
-//        let workie = "j.appleseed@icloud.com"
-//        let homeEmail = CNLabeledValue(label:CNLabelHome, value: homie as NSString)
-//        let workEmail = CNLabeledValue(label:CNLabelWork, value:workie as NSString)
-//        contact.emailAddresses = [homeEmail, workEmail]
-        
-        if self.contactinfo["phone_number"] != nil {
-                let homePhone = CNLabeledValue(label: CNLabelHome, value: CNPhoneNumber(stringValue :self.contactinfo["phone_number"]! ))
-            
-                contact.phoneNumbers = [homePhone]
-        }
-//        let homePhone = CNLabeledValue(label: CNLabelHome, value: CNPhoneNumber(stringValue :self.contactinfo["phone_number"]! ))
-//
-//        contact.phoneNumbers = [homePhone]
+//        if myString3 != "" {
+//                let homePhone = CNLabeledValue(label: CNLabelHome, value: CNPhoneNumber(stringValue :myString3 ))
+//                contact.phoneNumbers = [homePhone]
+//        }
+
         
         let homeAddress = CNMutablePostalAddress()
         homeAddress.street = "1 Infinite Loop"
@@ -118,7 +160,7 @@ class AddContactViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textF3: UITextField!
     
     
-    var myString=String()
+    var myString = String()
     var myString1=String()
     var myString2=String()
     var myString3=String()
@@ -126,10 +168,28 @@ class AddContactViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        myString1="hhh"
-        myString2="hhh"
-        myString3="hhh"
+        myString = ""
+        if self.contactinfo["first_name"] != nil{
+            myString = self.contactinfo["first_name"]!
+        }
         
+        myString1=""
+        
+        if self.contactinfo["last_name"] != nil{
+            myString1 = self.contactinfo["last_name"]!
+        }
+        
+        myString2="hhh"
+        if self.contactinfo["phone_number"] != nil {
+            myString2 = self.contactinfo["phone_number"]!
+        }
+        
+        myString3 = ""
+        
+        if self.contactinfo["email_address"] != nil{
+            myString3 = self.contactinfo["email_address"]!
+        }
+            
         // move this model somewhere in the new view
         /*
          tested did work
@@ -180,7 +240,7 @@ class AddContactViewController: UIViewController, UITextFieldDelegate {
         
         addContacts.backgroundColor = .clear
         addContacts.layer.cornerRadius = 14
-        addContacts.layer.borderWidth = 4
+        addContacts.layer.borderWidth = 3
         addContacts.layer.borderColor = UIColor.white.cgColor
         
     }
