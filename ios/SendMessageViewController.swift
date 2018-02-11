@@ -21,6 +21,8 @@ class SendMessageViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func sendMessage(_ sender: Any) {
         SendMessage(textContent: textF.text!)
+        loadSuccessController()
+    
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +56,30 @@ class SendMessageViewController: UIViewController, UITextFieldDelegate {
         lbl.addGestureRecognizer(tapGesture)
         
     }
+    
+    private func loadSuccessController() {
+        
+        
+        let alert = UIAlertController(title: nil, message: "Success", preferredStyle: .alert)
+        
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        //loadingIndicator.startAnimating();
+        
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+            UIAlertAction in
+            NSLog("OK Pressed")
+        }
+        
+        alert.addAction(okAction)
+        
+    }
+    
+
     
     func lblTapped(){
         lbl.isHidden = true
