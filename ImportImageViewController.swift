@@ -220,6 +220,33 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
                 self.passInfo = lan!
                 
                 
+               // print(json["regions"] as? String!)
+                
+                /*
+                 
+                 example
+                let blogs = json["blogs"] as? [[String: Any]] {
+                    for blog in blogs {
+                        if let name = blog["name"] as? String {
+                            names.append(name)
+                        }
+                    }
+                }
+                 */
+                
+                //TODO: need to debug this
+                
+                /*
+                for i in json["regions"] {
+                    for j in i["lines"]{
+                        for k in j["words"]{
+                            print(k["text"])
+                        }
+                    }
+                }
+ */
+                    
+
                 //transfer to next page
                 DispatchQueue.main.async{
                 self.performSegue(withIdentifier: "confirmContact", sender: self)
