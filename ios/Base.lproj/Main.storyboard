@@ -297,7 +297,7 @@
         <!--Send Message View Controller-->
         <scene sceneID="1x7-go-GNG">
             <objects>
-                <viewController id="7r7-DS-JH1" customClass="SendMessageViewController" customModule="ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SendMessageView" id="7r7-DS-JH1" customClass="SendMessageViewController" customModule="ios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nl9-Zq-a7h"/>
                         <viewControllerLayoutGuide type="bottom" id="17q-Ss-Ryn"/>

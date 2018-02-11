@@ -81,7 +81,12 @@ class AddContactViewController: UIViewController, UITextFieldDelegate {
         alert.view.addSubview(loadingIndicator)
         present(alert, animated: true, completion: nil)
         alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler: { action in
-            print ("continue")
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SendMessageView") as! SendMessageViewController
+            self.present(nextViewController, animated:true, completion:nil)
+                
+            //print ("continue")
             
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { action in
