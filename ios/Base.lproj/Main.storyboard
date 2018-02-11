@@ -346,40 +346,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSd-em-L0f">
-                                <rect key="frame" x="63" y="112" width="296" height="343"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSd-em-L0f">
+                                <rect key="frame" x="39" y="158" width="301" height="212"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5FI-qY-Q4f">
-                                <rect key="frame" x="177" y="430" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Send!"/>
-                                <connections>
-                                    <action selector="sendMessage:" destination="7r7-DS-JH1" eventType="touchUpInside" id="0xA-5h-IN7"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit your text message!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NvY-26-b1V">
-                                <rect key="frame" x="94" y="36" width="223" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Edit your text message!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NvY-26-b1V">
+                                <rect key="frame" x="89" y="68" width="223" height="21"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x3g-IX-48k">
-                                <rect key="frame" x="47" y="112" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x3g-IX-48k">
+                                <rect key="frame" x="60" y="167" width="280" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5FI-qY-Q4f">
+                                <rect key="frame" x="294" y="36" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="19"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendMessage:" destination="7r7-DS-JH1" eventType="touchUpInside" id="0xA-5h-IN7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.66676207040000002" green="0.79266558769999995" blue="0.98350469559999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NvY-26-b1V" firstAttribute="top" secondItem="nl9-Zq-a7h" secondAttribute="bottom" constant="150" id="09F-TK-Bcz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="x3g-IX-48k" secondAttribute="trailing" constant="50" id="3Xq-Ul-uz7"/>
+                            <constraint firstItem="x3g-IX-48k" firstAttribute="leading" secondItem="UqJ-6N-qSM" secondAttribute="leadingMargin" constant="50" id="6gQ-oZ-kj3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NvY-26-b1V" secondAttribute="trailing" constant="30" id="Dzf-YM-zDX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5FI-qY-Q4f" secondAttribute="trailing" constant="50" id="K5D-5y-Bgr"/>
+                            <constraint firstItem="5FI-qY-Q4f" firstAttribute="top" secondItem="nl9-Zq-a7h" secondAttribute="bottom" constant="70" id="NpB-xK-92U"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QSd-em-L0f" secondAttribute="trailing" constant="50" id="R4f-it-9Fg"/>
+                            <constraint firstItem="QSd-em-L0f" firstAttribute="leading" secondItem="UqJ-6N-qSM" secondAttribute="leadingMargin" constant="50" id="TsO-VZ-etE"/>
+                            <constraint firstItem="5FI-qY-Q4f" firstAttribute="leading" secondItem="UqJ-6N-qSM" secondAttribute="leadingMargin" constant="250" id="cBf-Cc-l5y"/>
+                            <constraint firstItem="x3g-IX-48k" firstAttribute="top" secondItem="nl9-Zq-a7h" secondAttribute="bottom" constant="250" id="fxw-gd-ulG"/>
+                            <constraint firstItem="QSd-em-L0f" firstAttribute="top" secondItem="nl9-Zq-a7h" secondAttribute="bottom" constant="250" id="ngK-5I-ITL"/>
+                            <constraint firstItem="NvY-26-b1V" firstAttribute="leading" secondItem="UqJ-6N-qSM" secondAttribute="leadingMargin" constant="30" id="uPX-sh-XH2"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="lbl" destination="QSd-em-L0f" id="a7T-xa-T1V"/>
+                        <outlet property="sendButton" destination="5FI-qY-Q4f" id="cRR-z0-8Vt"/>
                         <outlet property="textF" destination="x3g-IX-48k" id="i2N-hi-9ka"/>
                     </connections>
                 </viewController>
