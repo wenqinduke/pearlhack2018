@@ -14,6 +14,8 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
     var nameCard: UIImage!
     var passInfo: String!
     
+
+    
     @IBOutlet weak var scanCamera: UIButton!
 
     @IBOutlet weak var photoLibrary: UIButton!
@@ -79,6 +81,8 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
         photoLibrary.layer.borderWidth = 4
         photoLibrary.layer.borderColor = UIColor.white.cgColor
         // Do any additional setup after loading the view.
+        
+     
     }
     
     override func didReceiveMemoryWarning() {
@@ -86,11 +90,22 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
         // Dispose of any resources that can be recreated.
     }
     
+    private func loadCustomViewIntoController() {
+        
+        
+    }
+    
     
     
     @IBAction func detectInfo(_ sender: Any) {
         print ("testing")
-        requesting(img: nameCard)
+        if let image=nameCard as? UIImage{
+            requesting(img: nameCard)
+        }
+        else{
+            print ("success")
+            loadCustomViewIntoController()
+        }
         
         
         
@@ -170,8 +185,8 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
         case "confirmContact" as NSString:
             
             let secondController=segue.destination as! AddContactViewController
-            if (!self.passInfo.isEmpty){
-                secondController.myString=self.passInfo}
+           
+                secondController.myString=self.passInfo
         //secondController.myString="hhh"
         default:
             print ("" as NSString)
