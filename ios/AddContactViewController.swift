@@ -84,7 +84,7 @@ class AddContactViewController: UIViewController {
         contactInfo.text = myString
         
         addContacts.backgroundColor = .clear
-        addContacts.layer.cornerRadius = 20
+        addContacts.layer.cornerRadius = 14
         addContacts.layer.borderWidth = 4
         addContacts.layer.borderColor = UIColor.white.cgColor
 

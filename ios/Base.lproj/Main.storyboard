@@ -190,22 +190,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvk-uv-Ud8">
-                                <rect key="frame" x="16" y="-30" width="84" height="139"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <segue destination="Hjl-sy-N9R" kind="presentation" id="HGx-BP-kCw"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="G2k-Td-ygv">
                                 <rect key="frame" x="51" y="117" width="273" height="262"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Y0-2A-65T">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Y0-2A-65T">
                                 <rect key="frame" x="105" y="545" width="165" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
+                                <color key="tintColor" red="0.66984338099999996" green="0.74088088740000002" blue="0.98350469559999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Add to Contacts!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -213,8 +205,24 @@
                                     <action selector="Addcontact:" destination="TMz-Eg-vTT" eventType="touchUpInside" id="co0-dA-gdS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvk-uv-Ud8">
+                                <rect key="frame" x="26" y="-11" width="84" height="139"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="19"/>
+                                <state key="normal" title="&lt; Back">
+                                    <color key="titleColor" red="0.98080004759999995" green="0.98791411439999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Hjl-sy-N9R" kind="presentation" id="HGx-BP-kCw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.66676207040000002" green="0.79266558769999995" blue="0.98350469559999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="0Y0-2A-65T" secondAttribute="trailing" constant="90" id="Ku8-aa-v6a"/>
+                            <constraint firstItem="0Y0-2A-65T" firstAttribute="leading" secondItem="exT-GR-SP8" secondAttribute="leadingMargin" constant="90" id="eig-7K-hbz"/>
+                            <constraint firstItem="EA6-ww-S3w" firstAttribute="top" secondItem="0Y0-2A-65T" secondAttribute="bottom" constant="90" id="hjM-3N-M44"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="addContacts" destination="0Y0-2A-65T" id="WFI-O9-cYs"/>
