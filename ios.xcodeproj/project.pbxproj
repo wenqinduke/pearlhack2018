@@ -18,6 +18,7 @@
 		1368FAB6202F7C29005D8408 /* back.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1368FAB5202F7C29005D8408 /* back.jpeg */; };
 		1368FAB8202F7C9F005D8408 /* back3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1368FAB7202F7C9F005D8408 /* back3.jpeg */; };
 		1368FABA202F7ED2005D8408 /* card.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1368FAB9202F7ED2005D8408 /* card.jpeg */; };
+		40B1D72F20308C5C00F1CC63 /* SendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B1D72E20308C5C00F1CC63 /* SendMessageViewController.swift */; };
 		785E3C8A202F6A0F006F4864 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E3C89202F6A0F006F4864 /* AddContactViewController.swift */; };
 		785E3C8C202F827B006F4864 /* UIextension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E3C8B202F827B006F4864 /* UIextension.swift */; };
 		785E3C8E202F9CC7006F4864 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E3C8D202F9CC7006F4864 /* RoundButton.swift */; };
@@ -37,6 +38,7 @@
 		1368FAB5202F7C29005D8408 /* back.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = back.jpeg; sourceTree = "<group>"; };
 		1368FAB7202F7C9F005D8408 /* back3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = back3.jpeg; sourceTree = "<group>"; };
 		1368FAB9202F7ED2005D8408 /* card.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card.jpeg; sourceTree = "<group>"; };
+		40B1D72E20308C5C00F1CC63 /* SendMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageViewController.swift; sourceTree = "<group>"; };
 		785E3C89202F6A0F006F4864 /* AddContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
 		785E3C8B202F827B006F4864 /* UIextension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIextension.swift; sourceTree = "<group>"; };
 		785E3C8D202F9CC7006F4864 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				785E3C8B202F827B006F4864 /* UIextension.swift */,
 				133AF51E202E767C00F5E7A2 /* SecondViewController.swift */,
 				133AF520202E767C00F5E7A2 /* Main.storyboard */,
+				40B1D72E20308C5C00F1CC63 /* SendMessageViewController.swift */,
 				1368FAB5202F7C29005D8408 /* back.jpeg */,
 				785E3C89202F6A0F006F4864 /* AddContactViewController.swift */,
 				133AF523202E767C00F5E7A2 /* Assets.xcassets */,
@@ -168,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40B1D72F20308C5C00F1CC63 /* SendMessageViewController.swift in Sources */,
 				785E3C8A202F6A0F006F4864 /* AddContactViewController.swift in Sources */,
 				133AF51F202E767C00F5E7A2 /* SecondViewController.swift in Sources */,
 				785E3C8E202F9CC7006F4864 /* RoundButton.swift in Sources */,
