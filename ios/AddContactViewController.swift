@@ -30,6 +30,7 @@ class AddContactViewController: UIViewController, UITextFieldDelegate {
         else{
             if textF.text != ""{
                 contact.givenName = textF.text!
+                self.contactinfo["first_name"] = textF.text
             }
         }
         
@@ -63,15 +64,14 @@ class AddContactViewController: UIViewController, UITextFieldDelegate {
             if myString3 != "" {
                 let homePhone = CNLabeledValue(label: CNLabelHome, value: CNPhoneNumber(stringValue :myString3 ))
                                 contact.phoneNumbers = [homePhone]
-                }
-            self.contactinfo["phone_number"] = myString3
+            }
         }
         else{
             if textF3.text != "" {
                 let homePhone = CNLabeledValue(label: CNLabelHome, value: CNPhoneNumber(stringValue :textF3.text! ))
                 contact.phoneNumbers = [homePhone]
+                self.contactinfo["phone_number"] = textF3.text
             }
-            self.contactinfo["phone_number"] = textF3.text
         }
         
         //contact.givenName = self.contactinfo["first_name"]!
