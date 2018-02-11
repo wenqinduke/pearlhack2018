@@ -76,10 +76,10 @@ class AddContactViewController: UIViewController, UITextFieldDelegate {
 
     
     
-    @IBOutlet weak var textF: UITextField!
-    
+   
     @IBOutlet weak var lbl: UILabel!
     
+    @IBOutlet weak var textF: UITextField!
     var myString=String()
     
     override func viewDidLoad() {
