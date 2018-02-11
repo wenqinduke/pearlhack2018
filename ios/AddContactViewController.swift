@@ -14,9 +14,11 @@ class AddContactViewController: UIViewController {
     @IBAction func Addcontact(_ sender: Any) {
         let contact = CNMutableContact()
         //contact.imageData = NSData() // The profile picture as a NSData object
-        
+        print ("here")
         contact.givenName = "John"
         contact.familyName = "Appleseed"
+        
+        contact.jobTitle = "manager"
         
         let homie = "john@example.com"
         let workie = "j.appleseed@icloud.com"
@@ -53,7 +55,6 @@ class AddContactViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
