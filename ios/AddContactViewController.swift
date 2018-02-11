@@ -11,10 +11,11 @@ import Contacts
 
 class AddContactViewController: UIViewController {
     
+    @IBOutlet weak var addContacts: UIButton!
+    
     @IBAction func Addcontact(_ sender: Any) {
         let contact = CNMutableContact()
         //contact.imageData = NSData() // The profile picture as a NSData object
-        print ("here")
         contact.givenName = "John"
         contact.familyName = "Appleseed"
         
@@ -38,7 +39,42 @@ class AddContactViewController: UIViewController {
         saveRequest.add(contact, toContainerWithIdentifier:nil)
         try! store.execute(saveRequest)
         
+        //if success
+        confirmation()
+        
     }
+    
+    private func confirmation() {
+        
+        
+        let alert = UIAlertController(title:"Success", message:"Do you want to text the person you added?", preferredStyle: .alert)
+        
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        //loadingIndicator.startAnimating();
+        
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+        
+//        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+//            UIAlertAction in
+//            NSLog("OK Pressed")
+//        }
+//        alert.addAction(okAction)
+        
+
+        alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler: { action in
+            print ("continue")
+            
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { action in
+            print ("cancel")
+        }))
+
+    }
+
+    
     
     @IBOutlet weak var contactInfo: UILabel!
     var myString=String()
@@ -46,6 +82,12 @@ class AddContactViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         contactInfo.text = myString
+        
+        addContacts.backgroundColor = .clear
+        addContacts.layer.cornerRadius = 20
+        addContacts.layer.borderWidth = 4
+        addContacts.layer.borderColor = UIColor.white.cgColor
+
 
         // Do any additional setup after loading the view.
     }

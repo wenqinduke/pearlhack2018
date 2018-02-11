@@ -129,6 +129,24 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
     }
     
     private func loadCustomViewIntoController() {
+       
+        
+        let alert = UIAlertController(title: nil, message: "Please add a namecard", preferredStyle: .alert)
+        
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        //loadingIndicator.startAnimating();
+        
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+            UIAlertAction in
+            NSLog("OK Pressed")
+        }
+        
+        alert.addAction(okAction)
         
         
         
@@ -202,6 +220,33 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
                 self.passInfo = lan!
                 
                 
+               // print(json["regions"] as? String!)
+                
+                /*
+                 
+                 example
+                let blogs = json["blogs"] as? [[String: Any]] {
+                    for blog in blogs {
+                        if let name = blog["name"] as? String {
+                            names.append(name)
+                        }
+                    }
+                }
+                 */
+                
+                //TODO: need to debug this
+                
+                
+                for i in (json["regions"] as? [[String: Any]])! {
+                    for j in (i["lines"] as? [[String: Any]])!{
+                        for k in (j["words"] as? [[String: Any]])!{
+                            print(k["text"])
+                        }
+                    }
+                }
+ 
+                    
+
                 //transfer to next page
                 DispatchQueue.main.async{
                 self.performSegue(withIdentifier: "confirmContact", sender: self)
