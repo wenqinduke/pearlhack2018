@@ -191,57 +191,77 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
                 
                 let lan = json["language"] as? String
                 print ("++++++++++++++++++")
-                print(lan!)
-                self.passInfo = lan!
-                
-                
-               
-                
-              
-                var alltext = [String]()
-                
-                for i in (json["regions"] as? [[String: Any]])! {
-                    for j in (i["lines"] as? [[String: Any]])!{
-                        for k in (j["words"] as? [[String: Any]])!{
-                            let currentline = k["text"]!
-                            //print(currentline)
-                            alltext.append(currentline as! String)
-                        }
-                    }
-                }
-                
-                
-                self.infodict["first_name"] = alltext[0]
-                self.infodict["last_name"] = alltext[1]
-                self.infodict["phone_number"] = "+18572225869"
-
-                
-                
-                
-                for i in alltext{
-                    print(i)
-                    if(self.checkNumber(str: i)){
-                        let matched = self.matches(for: "[0-9]", in: i)
-                        var temp : String = ""
-                        for m in matched{
-                            temp += m
-                        }
-                        self.infodict["phone_number"] = temp
-                    }
-                    if(self.checkEmail(str: i)){
-                       self.infodict["email_address"] = i
-                    }
-                }
                 
                 
 
                 
+                 if (lan == nil) || (lan == "unk"){
+                    print ("nil picture")
+                    let alert = UIAlertController(title:"Please select a name card image", message:"Failed to detect the picture you uploaded", preferredStyle: .alert)
+ 
+                    let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+                     loadingIndicator.hidesWhenStopped = true
+                     loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+                     //loadingIndicator.startAnimating();
+     
+                     alert.view.addSubview(loadingIndicator)
+                     alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: { action in
+                     print ("ok")
+     
+                     }))
+ 
+                    self.present(alert, animated: true, completion: nil)
+                 }
+                 else{
+                
+                    print(lan!)
+                    self.passInfo = lan!
+                 
+                    var alltext = [String]()
+                    
+                    for i in (json["regions"] as? [[String: Any]])! {
+                        for j in (i["lines"] as? [[String: Any]])!{
+                            for k in (j["words"] as? [[String: Any]])!{
+                                let currentline = k["text"]!
+                                //print(currentline)
+                                alltext.append(currentline as! String)
+                            }
+                        }
+                    }
+                    
+                    
+                    self.infodict["first_name"] = alltext[0]
+                    self.infodict["last_name"] = alltext[1]
+                    self.infodict["phone_number"] = "+18572225869"
+
+                    
+                    
+                    
+                    for i in alltext{
+                        print(i)
+                        if(self.checkNumber(str: i)){
+                            let matched = self.matches(for: "[0-9]", in: i)
+                            var temp : String = ""
+                            for m in matched{
+                                temp += m
+                            }
+                            self.infodict["phone_number"] = temp
+                        }
+                        if(self.checkEmail(str: i)){
+                           self.infodict["email_address"] = i
+                        }
+                    }
+                    
                     
 
-                //transfer to next page
-                DispatchQueue.main.async{
-                self.performSegue(withIdentifier: "confirmContact", sender: self)
-                }
+                    
+                    
+
+                    //transfer to next page
+                    DispatchQueue.main.async{
+                    self.performSegue(withIdentifier: "confirmContact", sender: self)
+                        }
+                    }
                 
                 
             } catch let error as NSError {
@@ -253,6 +273,7 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
         
     }
     
+    /*
     
     func matches(for regex: String, in text: String) -> [String] {
         
@@ -268,8 +289,23 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
             return []
         }
     }
+ */
+    
+    func matches(for regex: String, in text: String) -> [String] {
+        
+        do {
+            let regex = try NSRegularExpression(pattern: regex)
+            let nsString = text as NSString
+            let results = regex.matches(in: text, range: NSRange(location: 0, length: nsString.length))
+            return results.map { nsString.substring(with: $0.range)}
+        } catch let error {
+            print("invalid regex: \(error.localizedDescription)")
+            return []
+        }
+    }
     
     func checkNumber(str: String) -> Bool{
+        
         let matched = matches(for: "[0-9]", in: str)
         if (matched.count > 9){
             return true
@@ -280,6 +316,7 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
     
     func checkEmail(str: String) -> Bool{
         let matched = matches(for: "@", in: str)
+
         if (matched.count > 0){
             return true
         }else{
