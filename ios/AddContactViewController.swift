@@ -63,6 +63,7 @@ class AddContactViewController: UIViewController {
 //        }
 //        alert.addAction(okAction)
         
+
         alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler: { action in
             print ("continue")
             
@@ -70,8 +71,6 @@ class AddContactViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { action in
             print ("cancel")
         }))
-//
-//        
 
     }
 

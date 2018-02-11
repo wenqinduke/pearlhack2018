@@ -236,15 +236,15 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
                 
                 //TODO: need to debug this
                 
-                /*
-                for i in json["regions"] {
-                    for j in i["lines"]{
-                        for k in j["words"]{
+                
+                for i in (json["regions"] as? [[String: Any]])! {
+                    for j in (i["lines"] as? [[String: Any]])!{
+                        for k in (j["words"] as? [[String: Any]])!{
                             print(k["text"])
                         }
                     }
                 }
- */
+ 
                     
 
                 //transfer to next page
