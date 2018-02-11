@@ -76,8 +76,11 @@ class SendMessageViewController: UIViewController, UITextFieldDelegate {
         present(alert, animated: true, completion: nil)
         
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
-            UIAlertAction in
-            NSLog("OK Pressed")
+            UIAlertAction in 
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "importImage") as! ImportImageViewController
+            self.present(nextViewController, animated:true, completion:nil)
         }
         
         alert.addAction(okAction)

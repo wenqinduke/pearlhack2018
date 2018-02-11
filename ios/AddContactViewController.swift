@@ -133,7 +133,10 @@ class AddContactViewController: UIViewController, UITextFieldDelegate {
             
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { action in
-            print ("cancel")
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "importImage") as! ImportImageViewController
+            self.present(nextViewController, animated:true, completion:nil)
         }))
 
    
