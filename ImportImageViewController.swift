@@ -128,7 +128,6 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
     //confirm action
     @IBAction func detectInfo(_ sender: Any) {
         // todo check if image namecard exists before calling requesting other wise pop a warning to the user
-
         requesting(img: nameCard)
         
     }
